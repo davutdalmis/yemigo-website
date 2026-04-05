@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gizlilik Politikasi - YemiGO Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #171717; background: #fff; -webkit-font-smoothing: antialiased;
+        }
+        nav {
+            position: fixed; top: 0; width: 100%;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid #E5E5E5; z-index: 100;
+        }
+        .nav-inner {
+            max-width: 980px; margin: 0 auto; padding: 0 24px;
+            height: 52px; display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-brand { font-size: 18px; font-weight: 700; color: #171717; text-decoration: none; }
+        .nav-brand span { color: #2E7D32; }
+        .nav-links { display: flex; gap: 32px; }
+        .nav-links a { font-size: 14px; font-weight: 500; color: #737373; text-decoration: none; }
+        .nav-links a:hover { color: #171717; }
+
+        .content {
+            max-width: 720px; margin: 0 auto; padding: 120px 24px 80px;
+        }
+        .content h1 {
+            font-size: 36px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px;
+        }
+        .content .date { font-size: 14px; color: #A3A3A3; margin-bottom: 48px; }
+        .content h2 {
+            font-size: 20px; font-weight: 600; margin-top: 40px; margin-bottom: 12px; color: #171717;
+        }
+        .content p, .content li {
+            font-size: 15px; line-height: 1.8; color: #525252; margin-bottom: 16px;
+        }
+        .content ul { padding-left: 20px; margin-bottom: 16px; }
+        .content li { margin-bottom: 8px; }
+        .content strong { color: #171717; }
+
+        footer {
+            padding: 40px 24px; border-top: 1px solid #E5E5E5; background: #fff;
+        }
+        .footer-inner {
+            max-width: 980px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .footer-left { font-size: 13px; color: #A3A3A3; }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a { font-size: 13px; color: #737373; text-decoration: none; }
+        .footer-links a:hover { color: #171717; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">Yemi<span>GO</span> Manager</a>
+            <div class="nav-links">
+                <a href="/">Ana Sayfa</a>
+                <a href="/manager/privacy">Gizlilik</a>
+                <a href="/manager/kvkk">KVKK</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>Gizlilik Politikasi</h1>
+        <p class="date">Son guncelleme: 17 Subat 2025</p>
+
+        <p>YemiGO ("biz", "bizim") olarak, YemiGO Manager uygulamasini kullanan restoran yoneticilerinin ve isletme sahiplerinin gizliligini korumaya onem veriyoruz. Bu gizlilik politikasi, hangi bilgileri topladigimizi, nasil kullandigimizi ve nasil korudugumuzu aciklar.</p>
+
+        <h2>1. Topladigimiz Bilgiler</h2>
+        <p>Uygulamamiz asagidaki bilgileri toplar:</p>
+        <ul>
+            <li><strong>Kimlik Bilgileri:</strong> Ad, soyad ve telefon numarasi (giris ve hesap dogrulama icin)</li>
+            <li><strong>Isletme Bilgileri:</strong> Restoran adi, sube bilgileri, adres</li>
+            <li><strong>Siparis Verileri:</strong> Siparis gecmisi, urun bilgileri, satis tutarlari</li>
+            <li><strong>Personel Bilgileri:</strong> Calisan isimleri, rolleri ve gorev bilgileri</li>
+            <li><strong>Kurye Konum Bilgileri:</strong> Kuryelerin gercek zamanli konumu (teslimat takibi icin)</li>
+            <li><strong>Cihaz Bilgileri:</strong> Cihaz modeli, isletim sistemi versiyonu</li>
+        </ul>
+
+        <h2>2. Bilgilerin Kullanim Amaci</h2>
+        <p>Topladigimiz bilgileri asagidaki amaclarla kullaniriz:</p>
+        <ul>
+            <li>Isletme sahibi kimlik dogrulamasi ve hesap yonetimi</li>
+            <li>Siparis yonetimi ve takibi (YemekSepeti, GetirYemek, TrendyolGo)</li>
+            <li>Kurye yonetimi ve gercek zamanli teslimat takibi</li>
+            <li>Personel yonetimi ve gorev atama</li>
+            <li>Masa ve QR siparis yonetimi</li>
+            <li>Satis raporlari ve analiz</li>
+            <li>Bildirim gonderme (yeni siparis, durum guncelleme)</li>
+            <li>Uygulama performansini iyilestirme</li>
+        </ul>
+
+        <h2>3. Bilgi Paylasimi</h2>
+        <p>Kisisel bilgilerinizi ucuncu taraflarla <strong>satmayiz</strong>. Bilgileriniz yalnizca asagidaki durumlarda paylasilabilir:</p>
+        <ul>
+            <li><strong>Hizmet Saglayicilar:</strong> Firebase (Google) - kimlik dogrulama, veritabani ve bildirim hizmetleri icin</li>
+            <li><strong>Yasal Zorunluluklar:</strong> Yasalarin gerektirdigi durumlarda yetkili makamlarla</li>
+        </ul>
+
+        <h2>4. Veri Guvenligi</h2>
+        <p>Verilerinizi korumak icin endustri standartlarinda guvenlik onlemleri uygulariz:</p>
+        <ul>
+            <li>Tum veri aktarimlari SSL/TLS sifreleme ile korunur</li>
+            <li>Veriler Firebase altyapisinda guvenli bir sekilde saklanir</li>
+            <li>Erisim yetkilendirme kurallari ile sinirlandirilmistir</li>
+            <li>Rol bazli erisim kontrolu uygulanir</li>
+        </ul>
+
+        <h2>5. Konum Verileri</h2>
+        <p>Konum verileri yalnizca <strong>kurye takibi amaci ile</strong> toplanir. Restoran yoneticileri kuryelerin aktif teslimat sirasindaki konumlarini harita uzerinde gorebilir. Konum verileri yalnizca uygulama on planda iken kullanilir.</p>
+
+        <h2>6. Veri Saklama Suresi</h2>
+        <p>Kisisel verileriniz hesabiniz aktif oldugu surece saklanir. Hesabinizin silinmesini talep ettiginizde, verileriniz 30 gun icinde kalici olarak silinir.</p>
+
+        <h2>7. Hesap Silme</h2>
+        <p>Hesabinizi silmek icin uygulama icinden <strong>Ayarlar &gt; Hesap Detaylari &gt; Hesabimi Sil</strong> yolunu izleyebilirsiniz. Hesabiniz silindiginde tum kisisel verileriniz kalici olarak kaldiririlir.</p>
+
+        <h2>8. Haklariniz</h2>
+        <p>Asagidaki haklara sahipsiniz:</p>
+        <ul>
+            <li>Kisisel verilerinize erisim talep etme</li>
+            <li>Verilerinizin duzeltilmesini isteme</li>
+            <li>Verilerinizin silinmesini talep etme</li>
+            <li>Veri islemeye itiraz etme</li>
+        </ul>
+
+        <h2>9. Ucuncu Taraf Hizmetler</h2>
+        <p>Uygulamamiz asagidaki ucuncu taraf hizmetlerini kullanir:</p>
+        <ul>
+            <li><strong>Firebase Authentication:</strong> Telefon numarasi ile kimlik dogrulama</li>
+            <li><strong>Firebase Cloud Firestore:</strong> Veritabani ve veri senkronizasyonu</li>
+            <li><strong>Firebase Cloud Messaging:</strong> Anlik bildirimler</li>
+            <li><strong>Apple Maps:</strong> Kurye konum takibi icin harita</li>
+        </ul>
+
+        <h2>10. Cocuklarin Gizliligi</h2>
+        <p>Uygulamamiz 18 yasindan kucuk bireylere yonelik degildir. Bilerek cocuklardan kisisel bilgi toplamayiz.</p>
+
+        <h2>11. Degisiklikler</h2>
+        <p>Bu gizlilik politikasini zaman zaman guncelleyebiliriz. Onemli degisikliklerde uygulama icinden bildirim gondeririz.</p>
+
+        <h2>12. Iletisim</h2>
+        <p>Gizlilik politikamiz hakkinda sorulariniz icin bizimle iletisime gecebilirsiniz:</p>
+        <ul>
+            <li><strong>E-posta:</strong> info@yemigo.com</li>
+            <li><strong>Web:</strong> yemigo.com</li>
+        </ul>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-left">&copy; 2025 YemiGO. Tum haklari saklidir.</div>
+            <div class="footer-links">
+                <a href="/manager/privacy">Gizlilik Politikasi</a>
+                <a href="/manager/kvkk">KVKK</a>
+                <a href="mailto:info@yemigo.com">Iletisim</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

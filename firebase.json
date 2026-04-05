@@ -1,0 +1,21 @@
+{
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "hosting": {
+    "site": "yemigo-main",
+    "public": "website",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      { "source": "/privacy", "destination": "/privacy.html" },
+      { "source": "/gizlilik", "destination": "/privacy.html" },
+      { "source": "/kvkk", "destination": "/kvkk.html" },
+      { "source": "/manager/privacy", "destination": "/manager/privacy.html" },
+      { "source": "/manager/kvkk", "destination": "/manager/kvkk.html" }
+    ]
+  }
+}
