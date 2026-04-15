@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yemigo.com/sitemap.xml
+
+Disallow: /manager/privacy
+Disallow: /manager/kvkk
