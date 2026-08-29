@@ -1,5 +1,13 @@
 import { type Metadata } from "next";
-import { Shield, Lightbulb, Heart } from "lucide-react";
+import {
+  Shield,
+  Lightbulb,
+  Heart,
+  Cloud,
+  RefreshCw,
+  Smartphone,
+  Plug,
+} from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import ScrollReveal from "@/components/animations/ScrollReveal";
@@ -7,45 +15,56 @@ import StaggerChildren from "@/components/animations/StaggerChildren";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Hakkimizda | YemiGO",
+  title: "Hakkımızda | YemiGO",
   description:
-    "YemiGO, restoranlarin dijital donusumunu hizlandiran profesyonel bir yonetim platformudur. Misyonumuz, vizyonumuz ve teknolojimiz hakkinda bilgi alin.",
+    "YemiGO, restoranların dijital dönüşümünü hızlandıran profesyonel bir yönetim platformudur. Misyonumuz, vizyonumuz ve teknolojimiz hakkında bilgi alın.",
 };
 
-const STATS = [
-  { value: "500+", label: "Restoran" },
-  { value: "2000+", label: "Sube" },
-  { value: "10000+", label: "Gunluk Siparis" },
-  { value: "50+", label: "Sehir" },
-];
-
-const TECH_STACK = [
-  "Swift / SwiftUI",
-  "Kotlin / Jetpack Compose",
-  "C# / WPF",
-  "Next.js / React",
-  "Firebase",
-  "Node.js",
+const CAPABILITIES = [
+  {
+    icon: Cloud,
+    title: "Bulut Tabanlı",
+    description:
+      "Tüm verileriniz güvenli bulut altyapısında saklanır. Şubeden, ofisten ya da evden — her yerden, her cihazdan erişin.",
+  },
+  {
+    icon: RefreshCw,
+    title: "Gerçek Zamanlı",
+    description:
+      "Sipariş, stok ve ciro; kasa, mutfak, kurye ve yönetimde anında aynı veriyle çalışır. Gecikme ve uyumsuzluk olmaz.",
+  },
+  {
+    icon: Smartphone,
+    title: "Her Cihazda",
+    description:
+      "iOS, Android, Windows masaüstü ve web. Ekibiniz hangi cihazı kullanırsa kullansın, YemiGO sorunsuz çalışır.",
+  },
+  {
+    icon: Plug,
+    title: "Açık Entegrasyonlar",
+    description:
+      "Yemeksepeti, Getir, Migros Yemek ve daha fazlası tek ekranda birleşir. Tüm kanallarınızı tek yerden yönetin.",
+  },
 ];
 
 const VALUES = [
   {
     icon: Shield,
-    title: "Guvenilirlik",
+    title: "Güvenilirlik",
     description:
-      "Verileriniz sifreli iletim ve otomatik yedekleme ile korunur. %99.9 uptime garantisi ile isletmeniz hic durmaz.",
+      "Verileriniz şifreli iletim ve otomatik yedekleme ile korunur. %99.9 uptime garantisi ile işletmeniz hiç durmaz.",
   },
   {
     icon: Lightbulb,
-    title: "Yenilikcilik",
+    title: "Yenilikçilik",
     description:
-      "Sektordeki en son teknolojileri takip eder, urunlerimizi surekli gelistiririz. Her ay yeni ozellikler ve iyilestirmeler yayinlariz.",
+      "Sektördeki en son teknolojileri takip eder, ürünlerimizi sürekli geliştiririz. Her ay yeni özellikler ve iyileştirmeler yayınlarız.",
   },
   {
     icon: Heart,
-    title: "Musteri Odaklilik",
+    title: "Müşteri Odaklılık",
     description:
-      "Her karari musterilerimizin ihtiyaclarina gore aliriz. Destek ekibimiz sorulariniza hizla yanit verir, geri bildirimleriniz yol haritamizi sekillendiri.",
+      "Her kararı müşterilerimizin ihtiyaçlarına göre alırız. Destek ekibimiz sorularınıza hızla yanıt verir, geri bildirimleriniz yol haritamızı şekillendirir.",
   },
 ];
 
@@ -58,14 +77,14 @@ export default function AboutPage() {
           <ScrollReveal>
             <div className="max-w-4xl mx-auto text-center">
               <span className="inline-block mb-4 text-sm font-semibold tracking-wide uppercase text-[#A855F7]">
-                Hakkimizda
+                Hakkımızda
               </span>
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-gray-900">
-                Restoranlarin dijital donusumunu hizlandiriyoruz.
+                Restoranların dijital dönüşümünü hızlandırıyoruz.
               </h1>
               <p className="mt-6 text-lg text-gray-500 max-w-2xl mx-auto">
-                YemiGO, restoran isletmecilerine profesyonel dijital araclar
-                sunarak operasyonel verimliliklerini artirmayi ve sektorde yeni
+                YemiGO, restoran işletmecilerine profesyonel dijital araçlar
+                sunarak operasyonel verimliliklerini artırmayı ve sektörde yeni
                 standartlar belirlemeyi hedefleyen bir teknoloji platformudur.
               </p>
             </div>
@@ -78,7 +97,7 @@ export default function AboutPage() {
         <Container>
           <ScrollReveal>
             <SectionHeader
-              label="Amacimiz"
+              label="Amacımız"
               title="Misyon ve Vizyon"
             />
           </ScrollReveal>
@@ -91,8 +110,8 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900">Misyon</h3>
                 <p className="mt-3 text-gray-500 leading-relaxed">
-                  Restoran isletmecilerine en profesyonel dijital araclari
-                  sunarak operasyonel verimliliklerini artirmak.
+                  Restoran işletmecilerine en profesyonel dijital araçları
+                  sunarak operasyonel verimliliklerini artırmak.
                 </p>
               </div>
             </ScrollReveal>
@@ -104,8 +123,8 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900">Vizyon</h3>
                 <p className="mt-3 text-gray-500 leading-relaxed">
-                  Turkiye&apos;nin her restoraninda YemiGO kullanilsin. Yemek
-                  sektorunun dijital standartlarini belirleyelim.
+                  Türkiye&apos;nin her restoranında YemiGO kullanılsın. Yemek
+                  sektörünün dijital standartlarını belirleyelim.
                 </p>
               </div>
             </ScrollReveal>
@@ -113,51 +132,36 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Stats */}
-      <section className="py-24">
-        <Container>
-          <ScrollReveal>
-            <SectionHeader
-              label="Rakamlarla YemiGO"
-              title="Buyuyen ekosistemimiz."
-            />
-          </ScrollReveal>
-
-          <StaggerChildren className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            {STATS.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="text-4xl md:text-5xl font-bold text-[#A855F7]">
-                  {stat.value}
-                </p>
-                <p className="mt-2 text-sm font-medium text-gray-500">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </StaggerChildren>
-        </Container>
-      </section>
-
-      {/* Technology */}
+      {/* Platform / Teknoloji */}
       <section className="py-24 bg-gray-50">
         <Container>
           <ScrollReveal>
             <SectionHeader
-              label="Altyapi"
-              title="Modern Teknoloji Altyapisi"
-              subtitle="Guvenilir, olceklenebilir ve yuksek performansli teknolojiler kullaniyoruz."
+              label="Teknoloji"
+              title="Sağlam, modern bir platform."
+              subtitle="Altyapımız; işletmenizin yoğun saatlerde bile kesintisiz, hızlı ve güvenli çalışması için tasarlandı."
             />
           </ScrollReveal>
 
-          <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
-            {TECH_STACK.map((tech, index) => (
-              <ScrollReveal key={tech} delay={index * 0.05}>
-                <span className="inline-block px-5 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-full shadow-sm transition-all duration-200 hover:border-purple-300 hover:text-[#A855F7]">
-                  {tech}
-                </span>
-              </ScrollReveal>
-            ))}
-          </div>
+          <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {CAPABILITIES.map((cap) => {
+              const Icon = cap.icon;
+              return (
+                <div
+                  key={cap.title}
+                  className="bg-white border border-gray-100 rounded-2xl p-7 transition-all duration-300 hover:shadow-lg"
+                >
+                  <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-purple-100 mb-5">
+                    <Icon size={24} className="text-[#A855F7]" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900">{cap.title}</h3>
+                  <p className="mt-2.5 text-sm text-gray-500 leading-relaxed">
+                    {cap.description}
+                  </p>
+                </div>
+              );
+            })}
+          </StaggerChildren>
         </Container>
       </section>
 
@@ -166,8 +170,8 @@ export default function AboutPage() {
         <Container>
           <ScrollReveal>
             <SectionHeader
-              label="Degerlerimiz"
-              title="Bize yol gosteren ilkeler."
+              label="Değerlerimiz"
+              title="Bize yol gösteren ilkeler."
             />
           </ScrollReveal>
 

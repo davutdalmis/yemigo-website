@@ -74,7 +74,7 @@ function ProductCard({
 
           {/* Arrow link */}
           <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#A855F7] group-hover:gap-3 transition-all duration-300">
-            Detayli Incele
+            Detaylı İncele
             <ArrowRight size={16} />
           </div>
         </div>
@@ -90,9 +90,9 @@ export default function ProductsGrid() {
     <section className="py-24 bg-white">
       <Container>
         <SectionHeader
-          label="Urunler"
-          title="Entegre cozum ailesi."
-          subtitle="Restoran operasyonlarinizin her adimini kapsayan urun ailesi."
+          label="Ürünler"
+          title="Entegre çözüm ailesi."
+          subtitle="Restoran operasyonlarınızın her adımını kapsayan ürün ailesi."
         />
 
         {/* Featured product (POS) — full width */}

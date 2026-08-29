@@ -8,7 +8,7 @@ import CTASection from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: "YemiGO POS | YemiGO",
   description:
-    "Kasadan mutfaga, masadan paket servise — tum siparis akisini tek ekrandan yonetin. Platform entegrasyonlari, stok takibi ve muhasebe dahil.",
+    "Kasadan mutfağa, masadan paket servise — tüm sipariş akışını tek ekrandan yönetin. Platform entegrasyonları, stok takibi ve muhasebe dahil.",
 };
 
 export default function POSPage() {

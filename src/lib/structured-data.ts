@@ -4,12 +4,12 @@ export function getOrganizationSchema() {
     "@type": "Organization",
     name: "YemiGO",
     url: "https://yemigo.com",
-    logo: "https://yemigo.com/logo.png",
-    description: "Restoran yonetim platformu. POS, kurye takip, online siparis ve platform entegrasyonlari.",
+    logo: "https://yemigo.com/logo.svg",
+    description: "Restoran yönetim platformu. POS, kurye takip, online sipariş ve platform entegrasyonları.",
     email: "info@yemigo.com",
     sameAs: [],
     foundingDate: "2024",
-    knowsAbout: ["Restoran Yonetimi", "POS Sistemi", "Online Siparis", "Kurye Takip"],
+    knowsAbout: ["Restoran Yönetimi", "POS Sistemi", "Online Sipariş", "Kurye Takip"],
   };
 }
 
@@ -19,7 +19,7 @@ export function getWebSiteSchema() {
     "@type": "WebSite",
     name: "YemiGO",
     url: "https://yemigo.com",
-    description: "Restoran yonetim platformu",
+    description: "Restoran yönetim platformu",
     inLanguage: "tr",
   };
 }

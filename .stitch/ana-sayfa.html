@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yemigo - Restoran Operasyonlarınızı Yönetin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "outline-variant": "#c7c4d8",
+                            "on-tertiary-fixed-variant": "#7b2f00",
+                            "on-primary-fixed": "#0f0069",
+                            "secondary-fixed": "#ffdbca",
+                            "on-background": "#1b1b24",
+                            "primary-fixed": "#e2dfff",
+                            "on-error": "#ffffff",
+                            "secondary-container": "#fd761a",
+                            "primary": "#3525cd",
+                            "surface-container": "#f0ecf9",
+                            "tertiary-container": "#a44100",
+                            "tertiary": "#7e3000",
+                            "surface-container-highest": "#e4e1ee",
+                            "background": "#fcf8ff",
+                            "on-surface-variant": "#464555",
+                            "secondary": "#9d4300",
+                            "surface-bright": "#fcf8ff",
+                            "primary-container": "#4f46e5",
+                            "error-container": "#ffdad6",
+                            "on-primary": "#ffffff",
+                            "inverse-on-surface": "#f3effc",
+                            "on-tertiary-container": "#ffd2be",
+                            "surface-variant": "#e4e1ee",
+                            "tertiary-fixed-dim": "#ffb695",
+                            "error": "#ba1a1a",
+                            "on-surface": "#1b1b24",
+                            "secondary-fixed-dim": "#ffb690",
+                            "surface-container-low": "#f5f2ff",
+                            "tertiary-fixed": "#ffdbcc",
+                            "outline": "#777587",
+                            "surface-dim": "#dcd8e5",
+                            "surface-container-lowest": "#ffffff",
+                            "on-primary-fixed-variant": "#3323cc",
+                            "on-secondary-container": "#5c2400",
+                            "on-tertiary-fixed": "#351000",
+                            "surface-tint": "#4d44e3",
+                            "surface": "#fcf8ff",
+                            "surface-container-high": "#eae6f4",
+                            "inverse-surface": "#302f39",
+                            "on-secondary-fixed": "#341100",
+                            "on-secondary": "#ffffff",
+                            "on-error-container": "#93000a",
+                            "on-primary-container": "#dad7ff",
+                            "on-tertiary": "#ffffff",
+                            "inverse-primary": "#c3c0ff",
+                            "on-secondary-fixed-variant": "#783200",
+                            "primary-fixed-dim": "#c3c0ff"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "container-max": "1440px",
+                            "gutter": "24px",
+                            "unit": "4px",
+                            "margin": "32px"
+                    },
+                    "fontFamily": {
+                            "body-md": [
+                                    "Inter"
+                            ],
+                            "display-xl": [
+                                    "Inter"
+                            ],
+                            "body-lg": [
+                                    "Inter"
+                            ],
+                            "heading-md": [
+                                    "Inter"
+                            ],
+                            "display-lg": [
+                                    "Inter"
+                            ],
+                            "label-sm": [
+                                    "Inter"
+                            ]
+                    },
+                    "fontSize": {
+                            "body-md": [
+                                    "16px",
+                                    {
+                                            "lineHeight": "24px",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "display-xl": [
+                                    "48px",
+                                    {
+                                            "lineHeight": "56px",
+                                            "letterSpacing": "-0.02em",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "body-lg": [
+                                    "18px",
+                                    {
+                                            "lineHeight": "28px",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "heading-md": [
+                                    "24px",
+                                    {
+                                            "lineHeight": "32px",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "display-lg": [
+                                    "36px",
+                                    {
+                                            "lineHeight": "44px",
+                                            "letterSpacing": "-0.02em",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "label-sm": [
+                                    "14px",
+                                    {
+                                            "lineHeight": "20px",
+                                            "fontWeight": "500"
+                                    }
+                            ]
+                    }
+            },
+                },
+            }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #3525cd 0%, #4f46e5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-md border-b border-slate-200/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)] bg-white/70">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-2xl font-black text-primary tracking-tighter">Yemigo</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-inter text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="#">POS Otomasyon</a>
+<a class="font-inter text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="#">Kurye Yönetimi</a>
+<a class="font-inter text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="#">Paket Entegrasyonu</a>
+<a class="font-inter text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="#">Fiyatlandırma</a>
+</nav>
+<div class="hidden md:flex items-center gap-4">
+<a class="font-inter text-sm font-medium tracking-tight text-slate-600 hover:text-primary transition-colors" href="#">Giriş Yap</a>
+<a class="font-inter text-sm font-medium tracking-tight bg-primary text-on-primary px-5 py-2.5 rounded-lg hover:bg-primary-container active:scale-95 transform transition-all duration-300 ease-in-out shadow-sm" href="#">Ücretsiz Deneyin</a>
+</div>
+<button class="md:hidden flex items-center text-on-surface">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative pt-24 pb-32 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-surface-container-low to-background -z-10"></div>
+<div class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary-fixed opacity-30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary-fixed opacity-20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3 pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 text-center">
+<h1 class="font-display-xl text-display-xl text-on-background mb-6 max-w-4xl mx-auto tracking-tight">
+                    Restoran Operasyonlarınızı <br class="hidden md:block"/> <span class="text-gradient">Tek Bir Yerden Yönetin</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
+                    Minimalist ve güçlü SaaS platformumuzla siparişleri, kuryeleri ve entegrasyonları tek ekranda toplayın. Hata payını azaltın, hızı artırın.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
+<a class="w-full sm:w-auto px-8 py-4 bg-primary text-on-primary font-label-sm text-label-sm rounded-xl hover:bg-primary-container transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2" href="#">
+                        Hemen Başla
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<a class="w-full sm:w-auto px-8 py-4 bg-surface-container text-on-surface font-label-sm text-label-sm rounded-xl hover:bg-surface-container-high transition-all border border-outline-variant flex items-center justify-center gap-2" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span>
+                        Demo Randevusu
+                    </a>
+</div>
+<div class="relative max-w-5xl mx-auto">
+<div class="glass-card rounded-2xl p-2 border border-surface-variant shadow-2xl relative z-10">
+<img alt="Yemigo Dashboard" class="w-full h-auto rounded-xl shadow-inner border border-surface-variant object-cover object-top aspect-[16/9]" data-alt="A clean, modern high-fidelity dashboard interface for a restaurant management software. The UI features glassmorphism panels, minimal data visualizations, and deep indigo accents on a pristine white background. The layout shows orders, courier tracking on a subtle map, and clean typography. The lighting is bright and evenly distributed, creating a professional B2B SaaS aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGnvohCKQGXKeilqeIvbK22Lh3kRE3wKw_5Xo6k94zine0vTpIQRBV5M4uEpzPQfJJziksJHVH5yepFvF53kdYQHzJ9SSdNFfl85x5aZO5BhbE_C0wp3B6TKqdeKegz23whX6eNr6LutTn39IdsYYuLa9Hw5teQkK6C35--TqO4WhArl9cKJFkLrQiLC1si30wC6_wbdgw0VpESdvyKXOKIMoUiRkVPiNsuv7-hK1BtV-ynotDMstu1oEPQSiLjMDumLxg0UY_BfY"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Grid -->
+<section class="py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="font-display-lg text-display-lg text-on-background mb-4">Her Şey Kontrol Altında</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Tüm süreçlerinizi tek bir platformdan yöneterek operasyonel verimliliğinizi maksimuma çıkarın.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Feature 1 -->
+<div class="glass-card rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-6 opacity-10 transform group-hover:scale-110 transition-transform duration-500 text-primary">
+<span class="material-symbols-outlined text-8xl" data-icon="point_of_sale">point_of_sale</span>
+</div>
+<div class="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined" data-icon="point_of_sale">point_of_sale</span>
+</div>
+<h3 class="font-heading-md text-heading-md text-on-background mb-3">POS Otomasyon</h3>
+<p class="text-on-surface-variant font-body-md text-body-md">Hızlı ve güvenilir sipariş yönetimi. Dokunmatik ekranlar için optimize edilmiş, hata payını minimize eden arayüz.</p>
+</div>
+<!-- Feature 2 -->
+<div class="glass-card rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-6 opacity-10 transform group-hover:scale-110 transition-transform duration-500 text-secondary-container">
+<span class="material-symbols-outlined text-8xl" data-icon="two_wheeler">two_wheeler</span>
+</div>
+<div class="w-12 h-12 bg-secondary-fixed rounded-xl flex items-center justify-center mb-6 text-secondary">
+<span class="material-symbols-outlined" data-icon="two_wheeler">two_wheeler</span>
+</div>
+<h3 class="font-heading-md text-heading-md text-on-background mb-3">Kurye Yönetimi</h3>
+<p class="text-on-surface-variant font-body-md text-body-md">Saha operasyonlarınızı optimize edin. Canlı konum takibi, akıllı atama algoritmaları ve performans raporları.</p>
+</div>
+<!-- Feature 3 -->
+<div class="glass-card rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-6 opacity-10 transform group-hover:scale-110 transition-transform duration-500 text-primary">
+<span class="material-symbols-outlined text-8xl" data-icon="dashboard">dashboard</span>
+</div>
+<div class="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+</div>
+<h3 class="font-heading-md text-heading-md text-on-background mb-3">Paket Entegrasyonu</h3>
+<p class="text-on-surface-variant font-body-md text-body-md">Tüm platformlar tek ekranda. YemekSepeti, Getir ve diğer tüm kanallardan gelen siparişleri merkezileştirin.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 bg-background relative overflow-hidden">
+<div class="absolute inset-0 bg-primary-container opacity-5"></div>
+<div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+<h2 class="font-display-lg text-display-lg text-on-background mb-6">Siz de Yemigo ile Büyüyün</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">Karmaşık operasyonları basitleştirin, müşteri memnuniyetini artırın ve işinizi geleceğe taşıyın.</p>
+<a class="inline-flex items-center justify-center px-8 py-4 bg-primary text-on-primary font-label-sm text-label-sm rounded-xl hover:bg-primary-container transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 gap-2" href="#">
+                    Ücretsiz Deneyin
+                    <span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-slate-100 bg-slate-50">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div>
+<span class="text-xl font-bold text-primary mb-4 block">Yemigo</span>
+<p class="font-inter text-sm text-slate-500 mt-2 max-w-xs">Restoran ve kurye operasyonları için yeni nesil, entegre yönetim platformu.</p>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-label-sm text-label-sm text-on-background uppercase tracking-wider mb-2">Ürün</span>
+<a class="font-inter text-sm text-slate-500 hover:text-primary transition-colors duration-200 hover:translate-x-1 transform inline-block w-fit" href="#">POS Otomasyon</a>
+<a class="font-inter text-sm text-slate-500 hover:text-primary transition-colors duration-200 hover:translate-x-1 transform inline-block w-fit" href="#">Kurye Yönetimi</a>
+<a class="font-inter text-sm text-slate-500 hover:text-primary transition-colors duration-200 hover:translate-x-1 transform inline-block w-fit" href="#">Entegrasyonlar</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-label-sm text-label-sm text-on-background uppercase tracking-wider mb-2">Kurumsal</span>
+<a class="font-inter text-sm text-slate-500 hover:text-primary transition-colors duration-200 hover:translate-x-1 transform inline-block w-fit" href="#">Hakkımızda</a>
+<a class="font-inter text-sm text-slate-500 hover:text-primary transition-colors duration-200 hover:translate-x-1 transform inline-block w-fit" href="#">Kullanım Koşulları</a>
+<a class="font-inter text-sm text-slate-500 hover:text-primary transition-colors duration-200 hover:translate-x-1 transform inline-block w-fit" href="#">Gizlilik Politikası</a>
+<a class="font-inter text-sm text-slate-500 hover:text-primary transition-colors duration-200 hover:translate-x-1 transform inline-block w-fit" href="#">İletişim</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-label-sm text-label-sm text-on-background uppercase tracking-wider mb-2">Bize Ulaşın</span>
+<a class="font-inter text-sm text-slate-500 hover:text-primary transition-colors duration-200 flex items-center gap-2" href="mailto:merhaba@yemigo.com">
+<span class="material-symbols-outlined text-sm" data-icon="mail">mail</span>
+                    merhaba@yemigo.com
+                </a>
+<a class="font-inter text-sm text-slate-500 hover:text-primary transition-colors duration-200 flex items-center gap-2" href="tel:+908501234567">
+<span class="material-symbols-outlined text-sm" data-icon="phone">phone</span>
+                    0850 123 45 67
+                </a>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between">
+<span class="font-inter text-sm text-slate-500">© 2024 Yemigo Teknolojileri A.Ş. Tüm hakları saklıdır.</span>
+</div>
+</footer>
+</body></html>

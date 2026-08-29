@@ -14,68 +14,53 @@ export const PRODUCTS: Product[] = [
   {
     id: "pos",
     name: "YemiGO POS",
-    tagline: "Merkezi siparis yonetimi",
+    tagline: "Merkezi sipariş yönetimi",
     platform: "Windows",
     icon: "Monitor",
     color: "#7C3AED",
     description:
-      "Kasadan mutfaga, masadan paket servise — tum siparis akisini tek ekrandan yonetin. Platform entegrasyonlari, stok takibi ve muhasebe dahil.",
+      "Kasadan mutfağa, masadan paket servise — tüm sipariş akışını tek ekrandan yönetin. Platform entegrasyonları, stok takibi ve muhasebe dahil.",
   },
   {
     id: "manager",
     name: "YemiGO Manager",
-    tagline: "Mobil yonetim paneli",
+    tagline: "Mobil yönetim paneli",
     platform: "iOS / Android",
     icon: "Smartphone",
     color: "#A855F7",
     description:
-      "Isletmenizi cebinizden yonetin. Anlik satis raporlari, siparis bildirimleri, kurye takibi ve sube karsilastirmalari her yerde elinizin altinda.",
+      "İşletmenizi cebinizden yönetin. Anlık satış raporları, sipariş bildirimleri, kurye takibi ve şube karşılaştırmaları her yerde elinizin altında.",
   },
   {
     id: "express",
     name: "YemiGO Express",
-    tagline: "Kurye takip uygulamasi",
+    tagline: "Kurye takip uygulaması",
     platform: "iOS / Android",
     icon: "Truck",
     color: "#C084FC",
     description:
-      "Akilli kurye atama, rota optimizasyonu ve canli konum takibi. Teslimat surelerinizi kisaltin, musteri memnuniyetini artirin.",
+      "Akıllı kurye atama, rota optimizasyonu ve canlı konum takibi. Teslimat sürelerinizi kısaltın, müşteri memnuniyetini artırın.",
   },
   {
     id: "panel",
     name: "YemiGO Panel",
-    tagline: "Web yonetim paneli",
+    tagline: "Web yönetim paneli",
     platform: "Web",
     icon: "LayoutDashboard",
     color: "#9333EA",
     description:
-      "Detayli raporlar, menu yonetimi, kullanici yetkileri ve coklu sube kontrolu. Tarayicinizdan isletmenizin tum verilerine erisim.",
+      "Detaylı raporlar, menü yönetimi, kullanıcı yetkileri ve çoklu şube kontrolü. Tarayıcınızdan işletmenizin tüm verilerine erişim.",
   },
   {
     id: "online-siparis",
-    name: "Online Siparis",
-    tagline: "Dijital siparis kanallari",
+    name: "Online Sipariş",
+    tagline: "Dijital sipariş kanalları",
     platform: "Web",
     icon: "ShoppingBag",
     color: "#A855F7",
     description:
-      "Kendi markanizla online siparis sistemi. QR menuden masadan siparis, paket servis sitesi ve platform entegrasyonlari tek catida.",
+      "Kendi markanızla online sipariş sistemi. QR menüden masadan sipariş, paket servis sitesi ve platform entegrasyonları tek çatıda.",
   },
-];
-
-// ─── Stats ───────────────────────────────────────────────────────────────────
-
-export interface Stat {
-  label: string;
-  value: number;
-  suffix: string;
-}
-
-export const STATS: Stat[] = [
-  { label: "Restoran", value: 500, suffix: "+" },
-  { label: "Sube", value: 2000, suffix: "+" },
-  { label: "Gunluk Siparis", value: 10000, suffix: "+" },
-  { label: "Uptime", value: 99.9, suffix: "%" },
 ];
 
 // ─── Features ────────────────────────────────────────────────────────────────
@@ -84,44 +69,68 @@ export interface Feature {
   icon: string;
   title: string;
   description: string;
+  /** Kısa kategori etiketi (mobil dönüşümlü satırlar için). */
+  kicker?: string;
+  /** Görsel panelde gösterilen somut yetenek rozetleri. */
+  points?: string[];
+  /** Vurgu rengi (mobil). */
+  accent?: "indigo" | "orange";
 }
 
 export const FEATURES: Feature[] = [
   {
-    icon: "Layers",
-    title: "Tek Platform, Tam Kontrol",
+    icon: "Factory",
+    kicker: "Üretim → Şube",
+    title: "Satış noktası değil, tüm zincir",
     description:
-      "POS, mutfak ekrani, kurye takibi, stok yonetimi ve muhasebe — hepsi birbiriyle entegre, tek ekosistemde.",
+      "Reçeteden otomatik stok düşümü, merkez mutfak üretimi ve şubeye sevkiyat — hepsi POS'a gömülü. Çoğu POS satışta durur; YemiGO üretimden masaya tüm halkayı yönetir.",
+    points: ["Reçete → stok", "Mal kabul", "Sevkiyat terminali"],
+    accent: "indigo",
   },
   {
-    icon: "Zap",
-    title: "Anlik Senkronizasyon",
+    icon: "MonitorSmartphone",
+    kicker: "Platformlar",
+    title: "Beş platform, tek ekran, tek mutabakat",
     description:
-      "Siparis geldiginde kasa, mutfak ve kurye ayni anda bilgilendirilir. Gercek zamanli Firebase altyapisi ile sifir gecikme.",
+      "YemekSepeti, Getir, Trendyol Go, Migros ve Fuudy siparişleri otomatik POS'a düşer. Her platform için günlük ciro mutabakatı çalışır — tek kuruş kaçmaz.",
+    points: ["YemekSepeti", "Getir", "Trendyol Go", "Migros", "Fuudy"],
+    accent: "orange",
   },
   {
-    icon: "BarChart3",
-    title: "Akilli Raporlama",
+    icon: "Bike",
+    kicker: "Teslimat",
+    title: "Kendi kuryeniz, kendi terminaliniz",
     description:
-      "Gunluk, haftalik, aylik satis analizleri. Urun bazli karlilik, sube karsilastirmalari ve trend grafikleri.",
+      "Native kurye uygulaması ve QR ile eşlenen el terminali. Zimmet, teslim, canlı konum ve rota — teslimat sürecini uçtan uca siz yönetin, platforma bağımlı kalmayın.",
+    points: ["Canlı konum", "QR cihaz eşleme", "Zimmet / teslim"],
+    accent: "indigo",
   },
   {
-    icon: "Globe",
-    title: "Platform Entegrasyonlari",
+    icon: "BadgePercent",
+    kicker: "Kendi Kanalınız",
+    title: "Komisyonsuz kendi sipariş kanalınız",
     description:
-      "YemekSepeti, Getir Yemek, Trendyol Go ve Fuudy siparisleri otomatik olarak POS ekranina duser.",
+      "Markanızla QR menü ve online sipariş sitesi. Mahalle bazlı teslimat bölgeleri ve WhatsApp bildirimi ile siparişler doğrudan POS'a düşer — platform komisyonu yok.",
+    points: ["QR menü", "Mahalle bölgeleri", "WhatsApp"],
+    accent: "orange",
   },
   {
-    icon: "Shield",
-    title: "Kurumsal Guvenlik",
+    icon: "RefreshCw",
+    kicker: "Altyapı",
+    title: "Gerçek zamanlı, çok cihazlı, offline-dayanıklı",
     description:
-      "Rol bazli erisim kontrolu, KVKK uyumu, sifreli veri iletimi ve otomatik yedekleme ile verileriniz guvenli.",
+      "Firebase ile masa, ödeme ve sipariş her cihazda anında senkron. Çok terminalli ödeme kilidi çift kapanışı önler; internet kesilse de yerel kuyruk sayesinde satış durmaz.",
+    points: ["Anlık senkron", "Ödeme kilidi", "Offline kuyruk"],
+    accent: "indigo",
   },
   {
-    icon: "Scaling",
-    title: "Sinirsiz Olceklenme",
+    icon: "ShieldCheck",
+    kicker: "Güvenlik",
+    title: "Gelir bütünlüğü ve kurumsal güvenlik",
     description:
-      "1 subeden 2000+ subeye. Altyapimiz buyumenize ayak uyduracak sekilde tasarlandi. Ekstra maliyet yok.",
+      "Parçalı ödeme kayması ve çift tahsilat koruması, imzalı (ED25519) otomatik güncelleme, rol bazlı erişim ve KVKK uyumu — cironuz ve verileriniz güvende.",
+    points: ["Mutabakat ağı", "İmzalı güncelleme", "KVKK / RBAC"],
+    accent: "orange",
   },
 ];
 
@@ -142,28 +151,35 @@ export const INTEGRATIONS: Integration[] = [
     logo: "/integrations/yemeksepeti.svg",
     color: "#FA0050",
     description:
-      "Turkiye'nin en buyuk yemek siparis platformu ile tam entegrasyon.",
+      "Türkiye'nin en büyük yemek sipariş platformu ile tam entegrasyon.",
   },
   {
     id: "getir-yemek",
     name: "Getir Yemek",
-    logo: "/integrations/getir.svg",
+    logo: "/integrations/getir-yemek.svg",
     color: "#5D3EBC",
-    description: "Getir Yemek siparisleriniz aninda POS ekranina yansir.",
+    description: "Getir Yemek siparişleriniz anında POS ekranına yansır.",
   },
   {
     id: "trendyol-go",
     name: "Trendyol Go",
-    logo: "/integrations/trendyol.svg",
+    logo: "/integrations/trendyol-go.svg",
     color: "#F27A1A",
-    description: "Trendyol Go entegrasyonu ile siparis kaybinizi sifira indirin.",
+    description: "Trendyol Go siparişleriniz anında POS ekranınıza düşer.",
+  },
+  {
+    id: "migros-yemek",
+    name: "Migros Yemek",
+    logo: "/integrations/migros-yemek.svg",
+    color: "#FA8200",
+    description: "Migros Yemek siparişleriniz tek ekranda toplanır.",
   },
   {
     id: "fuudy",
     name: "Fuudy",
     logo: "/integrations/fuudy.svg",
     color: "#FF6B35",
-    description: "Fuudy siparislerini otomatik olarak alin ve yonetin.",
+    description: "Fuudy siparişlerini otomatik olarak alın ve yönetin.",
   },
 ];
 
@@ -186,9 +202,9 @@ export const PRODUCT_DETAILS: Record<string, ProductDetail> = {
   pos: {
     id: "pos",
     name: "YemiGO POS",
-    tagline: "Restoraninizin dijital beyni.",
+    tagline: "Restoranınızın dijital beyni.",
     heroDescription:
-      "Masadan paket servise, kasadan mutfaga — tum siparis akisini tek ekrandan yonetin. YemekSepeti, GetirYemek ve TrendyolGo siparisleri otomatik olarak ekraniniza duser.",
+      "Masadan paket servise, kasadan mutfağa — tüm sipariş akışını tek ekrandan yönetin. YemekSepeti, GetirYemek ve TrendyolGo siparişleri otomatik olarak ekranınıza düşer.",
     platform: "Windows",
     icon: "Monitor",
     color: "#7C3AED",
@@ -196,53 +212,53 @@ export const PRODUCT_DETAILS: Record<string, ProductDetail> = {
     features: [
       {
         icon: "ShoppingCart",
-        title: "Siparis Yonetimi",
+        title: "Sipariş Yönetimi",
         description:
-          "Masa, paket, gel-al ve platform siparisleri tek ekranda.",
+          "Masa, paket, gel-al ve platform siparişleri tek ekranda.",
       },
       {
         icon: "Grid3x3",
-        title: "Masa Duzeni",
+        title: "Masa Düzeni",
         description:
-          "Gorsel masa plani ile salon operasyonunu kolayca yonetin.",
+          "Görsel masa planı ile salon operasyonunu kolayca yönetin.",
       },
       {
         icon: "CreditCard",
-        title: "Kasa Islemleri",
+        title: "Kasa İşlemleri",
         description:
-          "Nakit, kredi karti, yemek karti ve coklu odeme yontemleri.",
+          "Nakit, kredi kartı, yemek kartı ve çoklu ödeme yöntemleri.",
       },
       {
         icon: "Printer",
-        title: "Termal Yazici",
+        title: "Termal Yazıcı",
         description:
-          "Adisyon, mutfak fisi ve fatura yazdirma. ESC/POS uyumlu.",
+          "Adisyon, mutfak fişi ve fatura yazdırma. ESC/POS uyumlu.",
       },
       {
         icon: "Layers",
         title: "Platform Entegrasyonu",
         description:
-          "YemekSepeti, GetirYemek, TrendyolGo siparisleri aninda duser.",
+          "YemekSepeti, GetirYemek, TrendyolGo siparişleri anında düşer.",
       },
       {
         icon: "BarChart3",
-        title: "Gunluk Rapor",
-        description: "Kasa kapanisi, satis ozeti ve Z raporu tek tikla.",
+        title: "Günlük Rapor",
+        description: "Kasa kapanışı, satış özeti ve Z raporu tek tıkla.",
       },
     ],
     highlights: [
-      "Offline calisma destegi",
-      "Coklu yazici destegi",
-      "Rol bazli erisim",
-      "Otomatik guncelleme",
+      "Offline çalışma desteği",
+      "Çoklu yazıcı desteği",
+      "Rol bazlı erişim",
+      "Otomatik güncelleme",
     ],
   },
   manager: {
     id: "manager",
     name: "YemiGO Manager",
-    tagline: "Isletmeniz cebinizde.",
+    tagline: "İşletmeniz cebinizde.",
     heroDescription:
-      "Nerede olursaniz olun, restoraninizin nabzini tutun. Anlik satis verileri, kurye konumlari ve siparis bildirimleri avucunuzun icinde.",
+      "Nerede olursanız olun, restoranınızın nabzını tutun. Anlık satış verileri, kurye konumları ve sipariş bildirimleri avucunuzun içinde.",
     platform: "iOS / Android",
     icon: "Smartphone",
     color: "#A855F7",
@@ -250,54 +266,54 @@ export const PRODUCT_DETAILS: Record<string, ProductDetail> = {
     features: [
       {
         icon: "BarChart3",
-        title: "Canli Dashboard",
+        title: "Canlı Dashboard",
         description:
-          "Gunluk ciro, siparis sayisi ve ortalama tutar anlik olarak.",
+          "Günlük ciro, sipariş sayısı ve ortalama tutar anlık olarak.",
       },
       {
         icon: "MapPin",
         title: "Kurye Takibi",
         description:
-          "Harita uzerinde tum kuryelerin canli konumunu izleyin.",
+          "Harita üzerinde tüm kuryelerin canlı konumunu izleyin.",
       },
       {
         icon: "Bell",
-        title: "Anlik Bildirimler",
+        title: "Anlık Bildirimler",
         description:
-          "Yeni siparis, iptal ve onemli olaylarda push bildirim.",
+          "Yeni sipariş, iptal ve önemli olaylarda push bildirim.",
       },
       {
         icon: "Users",
-        title: "Personel Yonetimi",
+        title: "Personel Yönetimi",
         description:
-          "Calisan rolleri, vardiya planlama ve performans takibi.",
+          "Çalışan rolleri, vardiya planlama ve performans takibi.",
       },
       {
         icon: "Building2",
-        title: "Coklu Sube",
+        title: "Çoklu Şube",
         description:
-          "Tum subelerinizi tek uygulamadan karsilastirin ve yonetin.",
+          "Tüm şubelerinizi tek uygulamadan karşılaştırın ve yönetin.",
       },
       {
         icon: "FileText",
-        title: "Detayli Raporlar",
+        title: "Detaylı Raporlar",
         description:
-          "Urun bazli satis, kategori analizi ve trend grafikleri.",
+          "Ürün bazlı satış, kategori analizi ve trend grafikleri.",
       },
     ],
     highlights: [
       "Native iOS ve Android",
-      "Face ID / parmak izi giris",
-      "Offline rapor goruntuleme",
-      "Widget destegi",
+      "Face ID / parmak izi giriş",
+      "Offline rapor görüntüleme",
+      "Widget desteği",
     ],
   },
   express: {
     id: "express",
     name: "YemiGO Express",
-    tagline: "Teslimat surecinin tam kontrolu.",
+    tagline: "Teslimat sürecinin tam kontrolü.",
     heroDescription:
-      "Kurye atama, rota planlama ve canli konum takibi. Teslimat surelerinizi kisaltin, musteri memnuniyetini artirin.",
+      "Kurye atama, rota planlama ve canlı konum takibi. Teslimat sürelerinizi kısaltın, müşteri memnuniyetini artırın.",
     platform: "iOS / Android",
     icon: "Truck",
     color: "#C084FC",
@@ -305,54 +321,54 @@ export const PRODUCT_DETAILS: Record<string, ProductDetail> = {
     features: [
       {
         icon: "MapPin",
-        title: "Canli Konum",
+        title: "Canlı Konum",
         description:
-          "GPS tabanli gercek zamanli kurye takibi harita uzerinde.",
+          "GPS tabanlı gerçek zamanlı kurye takibi harita üzerinde.",
       },
       {
         icon: "Route",
         title: "Rota Optimizasyonu",
         description:
-          "En kisa ve en hizli teslimat rotasini otomatik hesaplama.",
+          "En kısa ve en hızlı teslimat rotasını otomatik hesaplama.",
       },
       {
         icon: "Clock",
-        title: "Siparis Kabul",
+        title: "Sipariş Kabul",
         description:
-          "Yeni siparisleri aninda gorme, kabul etme ve teslim sureci baslat.",
+          "Yeni siparişleri anında görme, kabul etme ve teslim sürecini başlat.",
       },
       {
         icon: "Wallet",
-        title: "Kazanc Takibi",
+        title: "Kazanç Takibi",
         description:
-          "Gunluk, haftalik ve aylik kazanc raporlari ve prim hesaplama.",
+          "Günlük, haftalık ve aylık kazanç raporları ve prim hesaplama.",
       },
       {
         icon: "Star",
         title: "Performans Skoru",
         description:
-          "Teslimat suresi, musteri puani ve tamamlama orani metrikleri.",
+          "Teslimat süresi, müşteri puanı ve tamamlama oranı metrikleri.",
       },
       {
         icon: "Bell",
         title: "Push Bildirim",
         description:
-          "Yeni siparis geldiginde aninda sesli ve gorsel bildirim.",
+          "Yeni sipariş geldiğinde anında sesli ve görsel bildirim.",
       },
     ],
     highlights: [
       "Pil dostu GPS takibi",
-      "Tek tikla navigasyon",
-      "Offline siparis goruntuleme",
+      "Tek tıkla navigasyon",
+      "Offline sipariş görüntüleme",
       "Kurye chat",
     ],
   },
   panel: {
     id: "panel",
     name: "YemiGO Panel",
-    tagline: "Veriye dayali kararlar alin.",
+    tagline: "Veriye dayalı kararlar alın.",
     heroDescription:
-      "Detayli raporlar, menu yonetimi, QR menu, stok takibi ve coklu sube kontrolu. Tarayicinizdan isletmenizin tum verilerine erisin.",
+      "Detaylı raporlar, menü yönetimi, QR menü, stok takibi ve çoklu şube kontrolü. Tarayıcınızdan işletmenizin tüm verilerine erişin.",
     platform: "Web",
     icon: "LayoutDashboard",
     color: "#9333EA",
@@ -360,54 +376,54 @@ export const PRODUCT_DETAILS: Record<string, ProductDetail> = {
     features: [
       {
         icon: "BarChart3",
-        title: "Gelismis Raporlama",
+        title: "Gelişmiş Raporlama",
         description:
-          "Satis, urun, kategori, saat dilimi ve sube bazli detayli analizler.",
+          "Satış, ürün, kategori, saat dilimi ve şube bazlı detaylı analizler.",
       },
       {
         icon: "UtensilsCrossed",
-        title: "Menu Yonetimi",
+        title: "Menü Yönetimi",
         description:
-          "Urun, kategori, fiyat ve gorsel duzenlemeleri web uzerinden yapin.",
+          "Ürün, kategori, fiyat ve görsel düzenlemeleri web üzerinden yapın.",
       },
       {
         icon: "QrCode",
-        title: "QR Menu",
+        title: "QR Menü",
         description:
-          "Dijital menu olusturun, QR kodlari yazdirin, masadan siparis alin.",
+          "Dijital menü oluşturun, QR kodları yazdırın, masadan sipariş alın.",
       },
       {
         icon: "Package",
         title: "Stok Takibi",
         description:
-          "Hammadde, recete ve stok hareketlerini yonetin. Kritik stok uyarisi.",
+          "Hammadde, reçete ve stok hareketlerini yönetin. Kritik stok uyarısı.",
       },
       {
         icon: "Users",
-        title: "Kullanici Yetkileri",
+        title: "Kullanıcı Yetkileri",
         description:
-          "Sahip, yonetici ve personel rolleri ile erisim kontrolu.",
+          "Sahip, yönetici ve personel rolleri ile erişim kontrolü.",
       },
       {
         icon: "Building2",
-        title: "Sube Yonetimi",
+        title: "Şube Yönetimi",
         description:
-          "Birden fazla subeyi karsilastirin, merkezi yapilandirma yapin.",
+          "Birden fazla şubeyi karşılaştırın, merkezi yapılandırma yapın.",
       },
     ],
     highlights: [
-      "Her cihazdan erisim",
-      "Gercek zamanli veri",
+      "Her cihazdan erişim",
+      "Gerçek zamanlı veri",
       "Excel/CSV export",
-      "Ozel tarih araligi",
+      "Özel tarih aralığı",
     ],
   },
   "online-siparis": {
     id: "online-siparis",
-    name: "Online Siparis",
-    tagline: "Kendi dijital siparis kanaliniz.",
+    name: "Online Sipariş",
+    tagline: "Kendi dijital sipariş kanalınız.",
     heroDescription:
-      "Kendi markanizla online siparis sitesi ve QR masadan siparis sistemi. Komisyonsuz, dogrudan musteri iliskisi.",
+      "Kendi markanızla online sipariş sitesi ve QR masadan sipariş sistemi. Komisyonsuz, doğrudan müşteri ilişkisi.",
     platform: "Web",
     icon: "ShoppingBag",
     color: "#A855F7",
@@ -417,41 +433,41 @@ export const PRODUCT_DETAILS: Record<string, ProductDetail> = {
         icon: "Globe",
         title: "Paket Servis Sitesi",
         description:
-          "paket.yemigo.com uzerinden kendi markanizla online siparis alin.",
+          "paket.yemigo.com üzerinden kendi markanızla online sipariş alın.",
       },
       {
         icon: "QrCode",
-        title: "QR Masadan Siparis",
+        title: "QR Masadan Sipariş",
         description:
-          "menu.yemigo.com ile misafirler telefondan siparis versin.",
+          "menu.yemigo.com ile misafirler telefondan sipariş versin.",
       },
       {
         icon: "ShoppingCart",
-        title: "Sepet Yonetimi",
-        description: "Urun secimi, porsiyon, ekstra malzeme ve not ekleme.",
+        title: "Sepet Yönetimi",
+        description: "Ürün seçimi, porsiyon, ekstra malzeme ve not ekleme.",
       },
       {
         icon: "MessageSquare",
         title: "WhatsApp Entegrasyonu",
         description:
-          "Siparis onaylari ve takip bilgileri WhatsApp uzerinden.",
+          "Sipariş onayları ve takip bilgileri WhatsApp üzerinden.",
       },
       {
         icon: "Palette",
-        title: "Marka Ozellestirme",
+        title: "Marka Özelleştirme",
         description:
-          "Logo, renk ve menu duzeni ile kendi markanizi yansitin.",
+          "Logo, renk ve menü düzeni ile kendi markanızı yansıtın.",
       },
       {
         icon: "TrendingUp",
-        title: "Siparis Analizi",
+        title: "Sipariş Analizi",
         description:
-          "En cok satan urunler, siparis saatleri ve musteri davranislari.",
+          "En çok satan ürünler, sipariş saatleri ve müşteri davranışları.",
       },
     ],
     highlights: [
-      "Sifir komisyon",
-      "Aninda POS'a dusme",
+      "Sıfır komisyon",
+      "Anında POS'a düşme",
       "Mobil uyumlu",
       "SEO dostu",
     ],
@@ -465,7 +481,10 @@ export interface PricingPlan {
   name: string;
   description: string;
   price: number;
+  priceYearly: number;
   period: string;
+  /** Özellik listesinin üstünde gösterilen "üst paketin her şeyi +" notu. */
+  featuresLead?: string;
   features: string[];
   highlighted: boolean;
   badge?: string;
@@ -475,104 +494,79 @@ export interface PricingPlan {
 export const PLANS: PricingPlan[] = [
   {
     id: "starter",
-    name: "Baslangic",
-    description: "Tek subeli kucuk isletmeler icin ideal baslangic paketi.",
-    price: 999,
+    name: "Başlangıç",
+    description: "Tek şubeli küçük işletmeler için ideal başlangıç paketi.",
+    price: 1490,
+    priceYearly: 14900,
     period: "ay",
     features: [
-      "1 Sube",
-      "YemiGO POS",
+      "1 şube · 1–3 kullanıcı",
+      "YemiGO POS (masa, paket, gel-al)",
+      "Masa & salon planı",
+      "Çoklu ödeme yöntemleri",
+      "Termal yazıcı & mutfak fişi",
+      "Sınırsız yazıcı bağlantısı",
+      "Offline çalışma",
+      "Online sipariş sitesi",
+      "QR menü (masadan sipariş)",
+      "WhatsApp sipariş bildirimi",
       "Temel raporlama",
-      "Online siparis sitesi",
       "E-posta destek",
     ],
     highlighted: false,
-    cta: "Ucretsiz Deneyin",
+    cta: "Ücretsiz Deneyin",
   },
   {
     id: "professional",
     name: "Profesyonel",
-    description: "Buyuyen isletmeler icin tum ozellikler.",
-    price: 1999,
+    description: "Büyüyen işletmeler için tüm özellikler.",
+    price: 2490,
+    priceYearly: 24900,
     period: "ay",
+    featuresLead: "Başlangıç'taki her şey, artı:",
     features: [
-      "5 Subeye kadar",
-      "Tum YemiGO urunleri",
-      "Platform entegrasyonlari",
-      "Gelismis raporlama",
-      "Kurye yonetimi",
-      "Oncelikli destek",
+      "5 şubeye kadar · sınırsız kullanıcı",
+      "Tüm YemiGO ürünleri (Manager, Express, Panel)",
+      "Mutfak ekranı (KDS)",
+      "Stok & reçete yönetimi",
+      "Platform entegrasyonları (YemekSepeti, Getir, Trendyol Go +2)",
+      "Kurye yönetimi & canlı takip",
+      "Çoklu şube karşılaştırma",
+      "Gelişmiş raporlama & analiz",
+      "Excel / CSV dışa aktarma",
+      "Öncelikli destek",
     ],
     highlighted: true,
-    badge: "En Populer",
-    cta: "Hemen Baslayin",
+    badge: "En Popüler",
+    cta: "Hemen Başlayın",
   },
   {
     id: "enterprise",
     name: "Kurumsal",
-    description: "Sinirsiz sube ve ozel cozumler.",
+    description: "Sınırsız şube ve özel çözümler.",
     price: 0,
+    priceYearly: 0,
     period: "ay",
+    featuresLead: "Profesyonel'deki her şey, artı:",
     features: [
-      "Sinirsiz sube",
-      "Tum Profesyonel ozellikleri",
-      "Ozel entegrasyonlar",
-      "Dedicated hesap yoneticisi",
+      "Sınırsız şube",
+      "Üretim / imalat merkezi",
+      "Özel & B2B entegrasyonlar",
+      "Dedicated hesap yöneticisi",
       "SLA garantisi",
-      "7/24 telefon destek",
-      "Yerinde egitim",
+      "7/24 telefon desteği",
+      "Yerinde eğitim",
     ],
     highlighted: false,
-    cta: "Bize Ulasin",
-  },
-];
-
-// ─── Testimonials ────────────────────────────────────────────────────────────
-
-export interface Testimonial {
-  id: string;
-  name: string;
-  role: string;
-  company: string;
-  quote: string;
-  avatar: string;
-}
-
-export const TESTIMONIALS: Testimonial[] = [
-  {
-    id: "1",
-    name: "Ahmet Yilmaz",
-    role: "Isletme Sahibi",
-    company: "Lezzet Duragi",
-    quote:
-      "YemiGO ile 3 subemizi tek ekrandan yonetiyoruz. Platform siparisleri aninda dususyor, hicbir siparis kacirmiyoruz.",
-    avatar: "/testimonials/avatar-1.jpg",
-  },
-  {
-    id: "2",
-    name: "Elif Demir",
-    role: "Operasyon Muduru",
-    company: "Pizza Express",
-    quote:
-      "Kurye takip sistemi sayesinde teslimat surelerimiz %30 kisaldi. Musterilerimiz cok memnun.",
-    avatar: "/testimonials/avatar-2.jpg",
-  },
-  {
-    id: "3",
-    name: "Mehmet Kaya",
-    role: "Genel Mudur",
-    company: "Burger House",
-    quote:
-      "20 subemizin tum verilerini anlik olarak gorebiliyoruz. Raporlama ozellikleri muhtesem.",
-    avatar: "/testimonials/avatar-3.jpg",
+    cta: "Bize Ulaşın",
   },
 ];
 
 // ─── Navigation ──────────────────────────────────────────────────────────────
 
 export const NAV_LINKS = [
-  { href: "/urunler", label: "Urunler" },
-  { href: "/fiyatlandirma", label: "Fiyatlandirma" },
-  { href: "/hakkimizda", label: "Hakkimizda" },
-  { href: "/iletisim", label: "Iletisim" },
+  { href: "/urunler", label: "Ürünler" },
+  { href: "/fiyatlandirma", label: "Fiyatlandırma" },
+  { href: "/hakkimizda", label: "Hakkımızda" },
+  { href: "/iletisim", label: "İletişim" },
 ];

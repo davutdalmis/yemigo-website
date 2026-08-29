@@ -1,21 +1,96 @@
 {
-  "firestore": {
-    "rules": "firestore.rules"
-  },
   "hosting": {
     "site": "yemigo-main",
-    "public": "website",
+    "public": "out",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
-      { "source": "/privacy", "destination": "/privacy.html" },
-      { "source": "/gizlilik", "destination": "/privacy.html" },
-      { "source": "/kvkk", "destination": "/kvkk.html" },
-      { "source": "/manager/privacy", "destination": "/manager/privacy.html" },
-      { "source": "/manager/kvkk", "destination": "/manager/kvkk.html" }
+    "trailingSlash": true,
+    "headers": [
+      {
+        "source": "/opengraph-image",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "image/png"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=86400"
+          }
+        ]
+      },
+      {
+        "source": "/icon",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "image/png"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=86400"
+          }
+        ]
+      },
+      {
+        "source": "/apple-icon",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "image/png"
+          },
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=86400"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(js|css|svg|png|jpg|jpeg|gif|webp|avif|woff|woff2|ico)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(html|json|xml|txt)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=0, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "SAMEORIGIN"
+          },
+          {
+            "key": "Referrer-Policy",
+            "value": "strict-origin-when-cross-origin"
+          },
+          {
+            "key": "Permissions-Policy",
+            "value": "camera=(), microphone=(), geolocation=(self)"
+          },
+          {
+            "key": "Strict-Transport-Security",
+            "value": "max-age=31536000; includeSubDomains; preload"
+          }
+        ]
+      }
     ]
   }
 }

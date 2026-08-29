@@ -8,7 +8,7 @@ import CTASection from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: "YemiGO Panel | YemiGO",
   description:
-    "Detayli raporlar, menu yonetimi, kullanici yetkileri ve coklu sube kontrolu. Tarayicinizdan isletmenizin tum verilerine erisim.",
+    "Detaylı raporlar, menü yönetimi, kullanıcı yetkileri ve çoklu şube kontrolü. Tarayıcınızdan işletmenizin tüm verilerine erişim.",
 };
 
 export default function PanelPage() {

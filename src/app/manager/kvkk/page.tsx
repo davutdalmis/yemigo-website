@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 
 export const metadata: Metadata = {
-  title: "KVKK Aydinlatma Metni - YemiGO Manager",
+  title: "KVKK Aydınlatma Metni — YemiGO Manager",
 };
 
 export default function ManagerKvkkPage() {
@@ -10,17 +10,17 @@ export default function ManagerKvkkPage() {
     <Container>
       <div className="mx-auto max-w-3xl pt-32 pb-20">
         <h1 className="text-4xl font-bold tracking-tight mb-2">
-          KVKK Aydinlatma Metni
+          KVKK Aydınlatma Metni
         </h1>
         <p className="text-sm text-gray-400 mb-12">
-          Son guncelleme: 17 Subat 2025
+          Son güncelleme: 17 Şubat 2025
         </p>
 
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          Bu aydinlatma metni, 6698 sayili Kisisel Verilerin Korunmasi Kanunu
-          (&quot;KVKK&quot;) kapsaminda, YemiGO (&quot;Veri Sorumlusu&quot;)
-          tarafindan kisisel verilerinizin islenmesine iliskin sizi
-          bilgilendirmek amaciyla hazirlanmistir.
+          Bu aydınlatma metni, 6698 sayılı Kişisel Verilerin Korunması Kanunu
+          (&quot;KVKK&quot;) kapsamında, YemiGO (&quot;Veri Sorumlusu&quot;)
+          tarafından kişisel verilerinizin işlenmesine ilişkin sizi
+          bilgilendirmek amacıyla hazırlanmıştır.
         </p>
 
         <h2 className="text-xl font-semibold mt-10 mb-3">
@@ -35,7 +35,7 @@ export default function ManagerKvkkPage() {
         </p>
 
         <h2 className="text-xl font-semibold mt-10 mb-3">
-          2. Islenen Kisisel Veriler
+          2. İşlenen Kişisel Veriler
         </h2>
         <table className="w-full border-collapse text-sm my-4">
           <thead>
@@ -44,7 +44,7 @@ export default function ManagerKvkkPage() {
                 Veri Kategorisi
               </th>
               <th className="bg-gray-50 p-3 text-left font-semibold border border-gray-200">
-                Veri Turleri
+                Veri Türleri
               </th>
             </tr>
           </thead>
@@ -59,18 +59,18 @@ export default function ManagerKvkkPage() {
             </tr>
             <tr>
               <td className="p-3 text-gray-600 border border-gray-200">
-                Iletisim Bilgileri
+                İletişim Bilgileri
               </td>
               <td className="p-3 text-gray-600 border border-gray-200">
-                Telefon numarasi, e-posta adresi
+                Telefon numarası, e-posta adresi
               </td>
             </tr>
             <tr>
               <td className="p-3 text-gray-600 border border-gray-200">
-                Isletme Bilgileri
+                İşletme Bilgileri
               </td>
               <td className="p-3 text-gray-600 border border-gray-200">
-                Restoran adi, sube bilgileri, adres
+                Restoran adı, şube bilgileri, adres
               </td>
             </tr>
             <tr>
@@ -83,10 +83,10 @@ export default function ManagerKvkkPage() {
             </tr>
             <tr>
               <td className="p-3 text-gray-600 border border-gray-200">
-                Islem Bilgileri
+                İşlem Bilgileri
               </td>
               <td className="p-3 text-gray-600 border border-gray-200">
-                Siparis gecmisi, satis verileri, urun bilgileri
+                Sipariş geçmişi, satış verileri, ürün bilgileri
               </td>
             </tr>
             <tr>
@@ -94,7 +94,7 @@ export default function ManagerKvkkPage() {
                 Personel Bilgileri
               </td>
               <td className="p-3 text-gray-600 border border-gray-200">
-                Calisan isimleri, rolleri, gorev bilgileri
+                Çalışan isimleri, rolleri, görev bilgileri
               </td>
             </tr>
             <tr>
@@ -102,151 +102,152 @@ export default function ManagerKvkkPage() {
                 Teknik Bilgiler
               </td>
               <td className="p-3 text-gray-600 border border-gray-200">
-                Cihaz bilgileri, uygulama kullanim verileri
+                Cihaz bilgileri, uygulama kullanım verileri
               </td>
             </tr>
           </tbody>
         </table>
 
         <h2 className="text-xl font-semibold mt-10 mb-3">
-          3. Kisisel Verilerin Islenme Amaci
+          3. Kişisel Verilerin İşlenme Amacı
         </h2>
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          Kisisel verileriniz asagidaki amaclarla islenmektedir:
+          Kişisel verileriniz aşağıdaki amaçlarla işlenmektedir:
         </p>
         <ul className="list-disc pl-5 text-[15px] leading-relaxed text-gray-600 mb-4">
           <li className="mb-2">
-            Isletme hesabi olusturma ve kimlik dogrulama
+            İşletme hesabı oluşturma ve kimlik doğrulama
           </li>
           <li className="mb-2">
-            Siparis yonetimi ve teslimat sureclerinin yurutulmesi
+            Sipariş yönetimi ve teslimat süreçlerinin yürütülmesi
           </li>
-          <li className="mb-2">Kurye takibi ve yonetimi</li>
-          <li className="mb-2">Personel yonetimi ve gorev atama</li>
-          <li className="mb-2">Masa ve QR siparis yonetimi</li>
-          <li className="mb-2">Satis raporlari ve analiz</li>
-          <li className="mb-2">Uygulama ici bildirim gonderimi</li>
+          <li className="mb-2">Kurye takibi ve yönetimi</li>
+          <li className="mb-2">Personel yönetimi ve görev atama</li>
+          <li className="mb-2">Masa ve QR sipariş yönetimi</li>
+          <li className="mb-2">Satış raporları ve analiz</li>
+          <li className="mb-2">Uygulama içi bildirim gönderimi</li>
           <li className="mb-2">
-            Uygulama performansinin iyilestirilmesi
+            Uygulama performansının iyileştirilmesi
           </li>
           <li className="mb-2">
-            Yasal yukumluluklerin yerine getirilmesi
+            Yasal yükümlülüklerin yerine getirilmesi
           </li>
         </ul>
 
         <h2 className="text-xl font-semibold mt-10 mb-3">
-          4. Kisisel Verilerin Aktarilmasi
+          4. Kişisel Verilerin Aktarılması
         </h2>
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          Kisisel verileriniz, asagidaki taraflara aktarilabilir:
+          Kişisel verileriniz, aşağıdaki taraflara aktarılabilir:
         </p>
         <ul className="list-disc pl-5 text-[15px] leading-relaxed text-gray-600 mb-4">
           <li className="mb-2">
             <strong className="text-gray-900">Google Firebase:</strong> Kimlik
-            dogrulama, veritabani ve bildirim altyapisi saglayicisi olarak (ABD
-            merkezli, standart sozlesme hukumleri kapsaminda)
+            doğrulama, veritabanı ve bildirim altyapısı sağlayıcısı olarak (ABD
+            merkezli, standart sözleşme hükümleri kapsamında)
           </li>
           <li className="mb-2">
             <strong className="text-gray-900">Yasal Makamlar:</strong>{" "}
-            Mevzuatin gerektirdigi hallerde yetkili kamu kurum ve kuruluslarina
+            Mevzuatın gerektirdiği hallerde yetkili kamu kurum ve kuruluşlarına
           </li>
         </ul>
 
         <h2 className="text-xl font-semibold mt-10 mb-3">
-          5. Kisisel Verilerin Toplanma Yontemi ve Hukuki Sebebi
+          5. Kişisel Verilerin Toplanma Yöntemi ve Hukuki Sebebi
         </h2>
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          Kisisel verileriniz, mobil uygulama uzerinden elektronik ortamda
-          toplanmaktadir. Verilerin islenmesinin hukuki sebepleri:
+          Kişisel verileriniz, mobil uygulama üzerinden elektronik ortamda
+          toplanmaktadır. Verilerin işlenmesinin hukuki sebepleri:
         </p>
         <ul className="list-disc pl-5 text-[15px] leading-relaxed text-gray-600 mb-4">
           <li className="mb-2">
-            KVKK m.5/2(c): Sozlesmenin kurulmasi ve ifasi icin gerekli olmasi
+            KVKK m.5/2(c): Sözleşmenin kurulması ve ifası için gerekli olması
           </li>
           <li className="mb-2">
-            KVKK m.5/2(f): Veri sorumlusunun mesru menfaati
+            KVKK m.5/2(f): Veri sorumlusunun meşru menfaati
           </li>
           <li className="mb-2">
-            KVKK m.5/1: Acik rizaniz (konum verileri icin)
+            KVKK m.5/1: Açık rızanız (konum verileri için)
           </li>
         </ul>
 
         <h2 className="text-xl font-semibold mt-10 mb-3">
-          6. Veri Saklama Suresi
+          6. Veri Saklama Süresi
         </h2>
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          Kisisel verileriniz, isleme amacinin gerektirdigi sure boyunca ve
-          yasal yukumlulukler cercevesinde saklanir. Hesabinizin silinmesi
-          halinde verileriniz 30 gun icinde imha edilir.
+          Kişisel verileriniz, işleme amacının gerektirdiği süre boyunca ve
+          yasal yükümlülükler çerçevesinde saklanır. Hesabınızın silinmesi
+          halinde verileriniz 30 gün içinde imha edilir.
         </p>
 
         <h2 className="text-xl font-semibold mt-10 mb-3">7. Hesap Silme</h2>
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          Hesabinizi silmek icin uygulama icinden{" "}
+          Hesabınızı silmek için uygulama içinden{" "}
           <strong className="text-gray-900">
-            Ayarlar &gt; Hesap Detaylari &gt; Hesabimi Sil
+            Ayarlar &gt; Hesap Detayları &gt; Hesabımı Sil
           </strong>{" "}
           yolunu izleyebilirsiniz.
         </p>
 
         <h2 className="text-xl font-semibold mt-10 mb-3">
-          8. KVKK Kapsamindaki Haklariniz
+          8. KVKK Kapsamındaki Haklarınız
         </h2>
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          KVKK&apos;nin 11. maddesi uyarinca asagidaki haklara sahipsiniz:
+          KVKK&apos;nın 11. maddesi uyarınca aşağıdaki haklara sahipsiniz:
         </p>
         <ul className="list-disc pl-5 text-[15px] leading-relaxed text-gray-600 mb-4">
           <li className="mb-2">
-            Kisisel verilerinizin islenip islenmedigini ogrenme
+            Kişisel verilerinizin işlenip işlenmediğini öğrenme
           </li>
           <li className="mb-2">
-            Islenmisse buna iliskin bilgi talep etme
+            İşlenmişse buna ilişkin bilgi talep etme
           </li>
           <li className="mb-2">
-            Islenme amacini ve amacina uygun kullanilip kullanilmadigini
-            ogrenme
+            İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını
+            öğrenme
           </li>
           <li className="mb-2">
-            Yurt icinde veya yurt disinda aktarildigi ucuncu kisileri bilme
+            Yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme
           </li>
           <li className="mb-2">
-            Eksik veya yanlis islenmisse duzeltilmesini isteme
+            Eksik veya yanlış işlenmişse düzeltilmesini isteme
           </li>
           <li className="mb-2">
-            KVKK&apos;nin 7. maddesindeki sartlar cercevesinde silinmesini veya
+            KVKK&apos;nın 7. maddesindeki şartlar çerçevesinde silinmesini veya
             yok edilmesini isteme
           </li>
           <li className="mb-2">
-            Duzeltme, silme ve yok etme islemlerinin aktarildigi ucuncu kisilere
-            bildirilmesini isteme
+            Düzeltme, silme ve yok etme işlemlerinin aktarıldığı üçüncü
+            kişilere bildirilmesini isteme
           </li>
           <li className="mb-2">
-            Islenen verilerin munhasiran otomatik sistemler vasitasiyla analiz
-            edilmesi suretiyle aleyhinize bir sonucun ortaya cikmasina itiraz
+            İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz
+            edilmesi suretiyle aleyhinize bir sonucun ortaya çıkmasına itiraz
             etme
           </li>
           <li className="mb-2">
-            Kanuna aykiri olarak islenmesi sebebiyle zarara ugramaniz halinde
-            zararin giderilmesini talep etme
+            Kanuna aykırı olarak işlenmesi sebebiyle zarara uğramanız halinde
+            zararın giderilmesini talep etme
           </li>
         </ul>
 
         <h2 className="text-xl font-semibold mt-10 mb-3">
-          9. Basvuru Yontemi
+          9. Başvuru Yöntemi
         </h2>
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          Yukarida belirtilen haklarinizi kullanmak icin asagidaki yontemlerle
-          basvurabilirsiniz:
+          Yukarıda belirtilen haklarınızı kullanmak için aşağıdaki yöntemlerle
+          başvurabilirsiniz:
         </p>
         <ul className="list-disc pl-5 text-[15px] leading-relaxed text-gray-600 mb-4">
           <li className="mb-2">
             <strong className="text-gray-900">E-posta:</strong> info@yemigo.com
-            adresine &quot;KVKK Basvurusu&quot; konulu e-posta gonderebilirsiniz
+            adresine &quot;KVKK Başvurusu&quot; konulu e-posta
+            gönderebilirsiniz
           </li>
         </ul>
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          Basvurulariniz en gec 30 gun icinde ucretsiz olarak
-          sonuclandirilacaktir.
+          Başvurularınız en geç 30 gün içinde ücretsiz olarak
+          sonuçlandırılacaktır.
         </p>
       </div>
     </Container>

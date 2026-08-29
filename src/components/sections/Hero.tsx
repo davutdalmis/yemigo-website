@@ -35,7 +35,7 @@ export default function Hero() {
             animate="visible"
             variants={fadeUp}
           >
-            <Badge>Restoran Yonetim Platformu</Badge>
+            <Badge>Restoran Yönetim Platformu</Badge>
           </motion.div>
 
           <motion.h1
@@ -45,12 +45,12 @@ export default function Hero() {
             variants={fadeUp}
             className="mt-8 text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-gray-900 leading-[1.1]"
           >
-            Restoraninizi
+            Restoranınızı
             <br />
             <span className="bg-gradient-to-r from-[#A855F7] to-[#7C3AED] bg-clip-text text-transparent">
               tek platformdan
             </span>{" "}
-            yonetin.
+            yönetin.
           </motion.h1>
 
           <motion.p
@@ -60,8 +60,8 @@ export default function Hero() {
             variants={fadeUp}
             className="mt-8 text-xl text-gray-500 max-w-2xl leading-relaxed"
           >
-            Siparis yonetimi, kurye takibi, masa operasyonlari ve platform
-            entegrasyonlari — hepsi tek cati altinda.
+            Sipariş yönetimi, kurye takibi, masa operasyonları ve platform
+            entegrasyonları — hepsi tek çatı altında.
           </motion.p>
 
           <motion.div
@@ -72,10 +72,10 @@ export default function Hero() {
             className="mt-10 flex flex-wrap items-center justify-center gap-4"
           >
             <Button variant="primary" size="lg">
-              Ucretsiz Deneyin
+              Ücretsiz Deneyin
             </Button>
             <Button variant="secondary" size="lg">
-              Urunleri Inceleyin
+              Ürünleri İnceleyin
             </Button>
           </motion.div>
         </div>

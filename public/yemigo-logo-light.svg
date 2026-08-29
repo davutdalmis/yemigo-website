@@ -1,0 +1,10 @@
+<svg viewBox="0 0 180 44" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="YemiGO">
+  <defs>
+    <linearGradient id="goGrad-light" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#667eea"/>
+      <stop offset="50%" stop-color="#764ba2"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+  </defs>
+  <text x="8" y="32" font-family='Inter, "Segoe UI", system-ui, sans-serif' font-weight="700" font-size="32" letter-spacing="-0.02em" fill="#111827">Yemi<tspan fill="url(#goGrad-light)">GO</tspan></text>
+</svg>

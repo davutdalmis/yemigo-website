@@ -6,27 +6,52 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Container from "@/components/ui/Container";
-import Button from "@/components/ui/Button";
 
-const NAV_LINKS = [
-  { href: "/urunler", label: "Urunler" },
-  { href: "/fiyatlandirma", label: "Fiyatlandirma" },
-  { href: "/hakkimizda", label: "Hakkimizda" },
-  { href: "/iletisim", label: "Iletisim" },
-];
+import { NAV_LINKS } from "@/lib/constants";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const pathname = usePathname();
+  const [overDark, setOverDark] = useState(false);
+  const rawPath = usePathname();
+  // trailingSlash:true ile usePathname '/urunler/' döner → sondaki slash'ı
+  // soyutla ki aktif-link kıyaslaması ('/urunler') tutsun (imalat paritesi).
+  const pathname = (rawPath || "/").replace(/\/+$/, "") || "/";
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Detect when navbar overlaps a dark cinematic section (hero) and invert chrome.
+  useEffect(() => {
+    const darkSections = Array.from(
+      document.querySelectorAll<HTMLElement>('[data-theme="dark"]')
+    );
+    if (darkSections.length === 0) {
+      setOverDark(false);
+      return;
+    }
+    const compute = () => {
+      const navBottom = 64; // h-16
+      const hit = darkSections.some((el) => {
+        const r = el.getBoundingClientRect();
+        return r.top < navBottom && r.bottom > 0;
+      });
+      setOverDark(hit);
+    };
+    compute();
+    window.addEventListener("scroll", compute, { passive: true });
+    window.addEventListener("resize", compute);
+    return () => {
+      window.removeEventListener("scroll", compute);
+      window.removeEventListener("resize", compute);
+    };
+  }, [pathname]);
 
   useEffect(() => {
     setIsMobileOpen(false);
@@ -45,76 +70,111 @@ export default function Navbar() {
 
   return (
     <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 h-16 transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/80 backdrop-blur-xl border-b border-gray-200/50 shadow-sm"
-            : "bg-white/60 backdrop-blur-md"
-        }`}
-      >
+      <nav className="fixed top-0 left-0 right-0 z-50 h-16">
+        {/* iOS scroll-edge arka plan — kademeli blur + opaklık gradyanı.
+            Koyu hero üstünde fade rengi koyuya döner; hero tepesinde (scroll
+            edilmemiş) tamamen şeffaf kalır ki cinematic görsel bozulmasın. */}
+        <div
+          aria-hidden="true"
+          className={`nav-scroll-edge transition-opacity duration-300 ${
+            overDark && !isScrolled ? "opacity-0" : "opacity-100"
+          }`}
+          style={
+            overDark
+              ? ({ ["--nav-fade-rgb" as string]: "10, 9, 26" } as React.CSSProperties)
+              : undefined
+          }
+        >
+          <div className="nav-progressive-blur">
+            <div />
+            <div />
+            <div />
+            <div />
+            <div />
+          </div>
+          <div className="nav-fade-overlay" />
+          {/* Renkli cam tonu — koyu hero üstünde gizli (fade zaten opacity-0) */}
+          {!overDark && <div className="nav-mesh-tint" />}
+        </div>
+
         <Container>
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <Link href="/" className="flex items-center shrink-0">
-              <span className="text-xl font-bold text-gray-900">Yemi</span>
-              <span className="text-xl font-bold gradient-purple-text">GO</span>
+          <div className="relative z-10 flex h-16 items-center gap-4">
+            {/* Logo — SVG kelime markası (koyu hero üstünde dark varyant) */}
+            <Link href="/" className="flex items-center shrink-0" aria-label="YemiGO ana sayfa">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={overDark ? "/yemigo-logo-dark.svg" : "/yemigo-logo-light.svg"}
+                alt="YemiGO"
+                width={115}
+                height={28}
+                className="h-7 w-auto"
+              />
             </Link>
 
-            {/* Desktop navigation */}
-            <div className="hidden md:flex items-center gap-1">
+            {/* Orta — yüzen kapsül nav (imalat paritesi) */}
+            <nav
+              className={`mx-auto hidden items-center gap-0.5 rounded-full border px-1.5 py-1.5 shadow-sm backdrop-blur-md backdrop-saturate-150 md:flex ${
+                overDark
+                  ? "border-white/15 bg-white/10"
+                  : "border-[var(--glass-border)] bg-[var(--glass-bg)]"
+              }`}
+            >
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
+                const base = isActive
+                  ? "bg-[var(--primary)] text-white shadow-sm"
+                  : overDark
+                    ? "text-white/70 hover:text-white hover:bg-white/10"
+                    : "text-apple-text-soft hover:text-apple-text hover:bg-black/[0.05]";
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
-                      isActive
-                        ? "text-purple-600"
-                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-100/60"
-                    }`}
+                    className={`rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors ${base}`}
                   >
                     {link.label}
-                    {isActive && (
-                      <motion.div
-                        layoutId="navbar-indicator"
-                        className="absolute bottom-0 left-3 right-3 h-0.5 rounded-full"
-                        style={{
-                          background:
-                            "linear-gradient(90deg, var(--purple) 0%, var(--purple-dark) 100%)",
-                        }}
-                        transition={{
-                          type: "spring",
-                          stiffness: 380,
-                          damping: 30,
-                        }}
-                      />
-                    )}
                   </Link>
                 );
               })}
-            </div>
+            </nav>
 
-            {/* Desktop CTA */}
-            <div className="hidden md:flex items-center gap-3">
-              <Link
-                href="/giris"
-                className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+            {/* Sağ CTA */}
+            <div className="hidden items-center gap-4 md:flex">
+              <a
+                href="https://panel.yemigo.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`text-xs font-medium transition-colors ${
+                  overDark
+                    ? "text-white/80 hover:text-white"
+                    : "text-apple-text-soft hover:text-apple-text"
+                }`}
               >
-                Giris Yap
+                Giriş Yap
+              </a>
+              <Link
+                href="/iletisim"
+                className={`rounded-full px-4 py-1.5 text-xs font-medium transition-colors ${
+                  overDark
+                    ? "bg-white text-black hover:bg-white/90"
+                    : "bg-indigo-600 text-white hover:bg-indigo-700"
+                }`}
+              >
+                Ücretsiz Deneyin
               </Link>
-              <Button variant="primary" size="sm">
-                <Link href="/demo">Ucretsiz Deneyin</Link>
-              </Button>
             </div>
 
             {/* Mobile hamburger */}
             <button
               onClick={() => setIsMobileOpen(!isMobileOpen)}
-              className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100/60 transition-colors"
-              aria-label={isMobileOpen ? "Menuyu kapat" : "Menuyu ac"}
+              className={`ml-auto flex h-8 w-8 items-center justify-center rounded-md transition-colors md:hidden ${
+                overDark
+                  ? "text-white/80 hover:text-white"
+                  : "text-apple-text-soft hover:text-apple-text"
+              }`}
+              aria-label={isMobileOpen ? "Menüyü kapat" : "Menüyü aç"}
             >
-              {isMobileOpen ? <X size={22} /> : <Menu size={22} />}
+              {isMobileOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
           </div>
         </Container>
@@ -130,21 +190,18 @@ export default function Navbar() {
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-40 md:hidden"
           >
-            {/* Backdrop */}
             <div
               className="absolute inset-0 bg-black/20 backdrop-blur-sm"
               onClick={() => setIsMobileOpen(false)}
             />
-
-            {/* Menu panel */}
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="absolute top-16 left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-gray-200/50 shadow-lg"
+              className="absolute top-16 left-0 right-0 border-b border-apple-border-soft bg-white/95 backdrop-blur-xl"
             >
-              <div className="px-6 py-4 space-y-1">
+              <div className="space-y-1 px-6 py-4">
                 {NAV_LINKS.map((link, index) => {
                   const isActive = pathname === link.href;
                   return (
@@ -156,10 +213,10 @@ export default function Navbar() {
                     >
                       <Link
                         href={link.href}
-                        className={`block px-4 py-3 text-base font-medium rounded-xl transition-colors ${
+                        className={`block rounded-xl px-4 py-3 text-base font-medium transition-colors ${
                           isActive
-                            ? "text-purple-600 bg-purple-50"
-                            : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                            ? "bg-indigo-50 text-indigo-700"
+                            : "text-apple-text hover:bg-apple-bg-soft"
                         }`}
                       >
                         {link.label}
@@ -168,18 +225,26 @@ export default function Navbar() {
                   );
                 })}
 
-                <div className="pt-3 pb-1 space-y-2">
-                  <Link
-                    href="/giris"
-                    className="block w-full text-center px-6 py-3 text-base font-semibold rounded-full border-2 border-purple-500 text-purple-600 hover:bg-purple-50 transition-colors"
+                <div className="space-y-2 pt-3 pb-1">
+                  <a
+                    href="https://panel.yemigo.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full rounded-full border border-apple-border bg-white px-6 py-3 text-center text-sm font-semibold text-apple-text transition-colors hover:bg-apple-bg-soft"
                   >
-                    Giris Yap
+                    Giriş Yap
+                  </a>
+                  <Link
+                    href="/iletisim"
+                    className="block w-full rounded-full border border-apple-border bg-white px-6 py-3 text-center text-sm font-semibold text-apple-text transition-colors hover:bg-apple-bg-soft"
+                  >
+                    İletişime Geçin
                   </Link>
                   <Link
-                    href="/demo"
-                    className="block w-full text-center px-6 py-3 text-base font-semibold rounded-full bg-[#A855F7] hover:bg-[#9333EA] text-white shadow-md transition-all"
+                    href="/iletisim"
+                    className="block w-full rounded-full bg-indigo-600 px-6 py-3 text-center text-sm font-semibold text-white transition-all hover:bg-indigo-700"
                   >
-                    Ucretsiz Deneyin
+                    Ücretsiz Deneyin
                   </Link>
                 </div>
               </div>

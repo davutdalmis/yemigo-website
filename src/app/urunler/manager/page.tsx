@@ -8,7 +8,7 @@ import CTASection from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: "YemiGO Manager | YemiGO",
   description:
-    "Isletmenizi cebinizden yonetin. Anlik satis raporlari, siparis bildirimleri, kurye takibi ve sube karsilastirmalari her yerde elinizin altinda.",
+    "İşletmenizi cebinizden yönetin. Anlık satış raporları, sipariş bildirimleri, kurye takibi ve şube karşılaştırmaları her yerde elinizin altında.",
 };
 
 export default function ManagerPage() {

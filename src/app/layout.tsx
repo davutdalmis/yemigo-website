@@ -2,23 +2,24 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 import "./globals.css";
 
 const inter = Inter({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   display: "swap",
   variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yemigo.com"),
-  title: "YemiGO - Restoran Yonetim Platformu",
+  title: "YemiGO — Restoran Yönetim Platformu",
   description:
-    "Restoraninizi tek platformdan yonetin. POS, kurye takip, online siparis, platform entegrasyonlari ve daha fazlasi. 2000+ sube, 10.000+ gunluk siparis.",
+    "Restoranınızı tek platformdan yönetin. POS, kurye takip, komisyonsuz online sipariş, platform entegrasyonları ve daha fazlası.",
   keywords: [
-    "restoran yonetim",
+    "restoran yönetim",
     "pos sistemi",
-    "online siparis",
+    "online sipariş",
     "kurye takip",
     "yemeksepeti entegrasyon",
     "getir entegrasyon",
@@ -30,24 +31,15 @@ export const metadata: Metadata = {
     locale: "tr_TR",
     url: "https://yemigo.com",
     siteName: "YemiGO",
-    title: "YemiGO - Restoran Yonetim Platformu",
+    title: "YemiGO — Restoran Yönetim Platformu",
     description:
-      "Restoraninizi tek platformdan yonetin. POS, kurye takip, online siparis, platform entegrasyonlari ve daha fazlasi.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "YemiGO - Restoran Yonetim Platformu",
-      },
-    ],
+      "Restoranınızı tek platformdan yönetin. POS, kurye takip, online sipariş, platform entegrasyonları ve daha fazlası.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "YemiGO - Restoran Yonetim Platformu",
+    title: "YemiGO — Restoran Yönetim Platformu",
     description:
-      "Restoraninizi tek platformdan yonetin. POS, kurye takip, online siparis ve daha fazlasi.",
-    images: ["/og-image.png"],
+      "Restoranınızı tek platformdan yönetin. POS, kurye takip, online sipariş ve daha fazlası.",
   },
   robots: {
     index: true,
@@ -58,7 +50,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#A855F7",
+  themeColor: "#4F46E5",
 };
 
 export default function RootLayout({
@@ -69,9 +61,11 @@ export default function RootLayout({
   return (
     <html lang="tr" className={inter.variable}>
       <body className={`${inter.className} antialiased`}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <SmoothScrollProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

@@ -3,3 +3,9 @@ node_modules/
 out/
 *.tsbuildinfo
 .env.local
+
+# deploy onbellegi
+.firebase/
+
+# kullanilmayan yuksek cozunurluklu orijinal gorseller (108 MB, src ve build ciktisinda referans yok)
+public/generated/

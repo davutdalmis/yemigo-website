@@ -6,9 +6,9 @@ import ProductHighlights from "@/components/products/ProductHighlights";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Online Siparis | YemiGO",
+  title: "Online Sipariş | YemiGO",
   description:
-    "Kendi markanizla online siparis sistemi. QR menuden masadan siparis, paket servis sitesi ve platform entegrasyonlari tek catida.",
+    "Kendi markanızla online sipariş sistemi. QR menüden masadan sipariş, paket servis sitesi ve platform entegrasyonları tek çatıda.",
 };
 
 export default function OnlineSiparisPage() {

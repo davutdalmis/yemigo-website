@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import ExpressPrivacyContent from "@/components/legal/ExpressPrivacyContent";
+import WebsitePrivacyContent from "@/components/legal/WebsitePrivacyContent";
 
 export const metadata: Metadata = {
-  title: "Gizlilik Politikasi | YemiGO",
+  title: "Gizlilik ve Çerez Politikası | YemiGO",
+  description:
+    "YemiGO internet sitesi gizlilik ve çerez politikası: topladığımız veriler, çerez kullanımı, paylaşım ve haklarınız.",
 };
 
 export default function GizlilikPage() {
-  return <ExpressPrivacyContent />;
+  return <WebsitePrivacyContent />;
 }

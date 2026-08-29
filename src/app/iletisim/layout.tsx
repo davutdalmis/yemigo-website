@@ -1,9 +1,9 @@
 import { type Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Iletisim | YemiGO",
+  title: "İletişim | YemiGO",
   description:
-    "YemiGO ile iletisime gecin. Sorulariniz, onerileriniz veya demo talepleriniz icin bize ulasin.",
+    "YemiGO ile iletişime geçin. Sorularınız, önerileriniz veya demo talepleriniz için bize ulaşın.",
 };
 
 export default function IletisimLayout({

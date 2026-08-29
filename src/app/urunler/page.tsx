@@ -1,102 +1,66 @@
 import { type Metadata } from "next";
-import Link from "next/link";
-import {
-  Monitor,
-  Smartphone,
-  Truck,
-  LayoutDashboard,
-  ShoppingBag,
-  ArrowRight,
-} from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
-import ScrollReveal from "@/components/animations/ScrollReveal";
 import CTASection from "@/components/sections/CTASection";
-import { PRODUCTS, type Product } from "@/lib/constants";
-import { type LucideIcon } from "lucide-react";
+import ProductSection from "@/components/products/ProductSection";
+import ManagerDualPhones from "@/components/products/ManagerDualPhones";
+import ExpressLiveMap from "@/components/products/ExpressLiveMap";
+import { PRODUCTS, PRODUCT_DETAILS } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Urunler | YemiGO",
+  title: "Ürünler | YemiGO",
   description:
-    "YemiGO urun ailesi: POS, Manager, Express, Panel ve Online Siparis. Restoran operasyonlarinizin her adimini kapsayan entegre cozumler.",
+    "YemiGO ürün ailesi: POS, Manager, Express, Panel ve Online Sipariş. Restoran operasyonlarınızın her adımını kapsayan entegre çözümler.",
 };
 
-const iconMap: Record<string, LucideIcon> = {
-  Monitor,
-  Smartphone,
-  Truck,
-  LayoutDashboard,
-  ShoppingBag,
+// Her ürün için kompoze ekran görüntüsü (public/img).
+const PRODUCT_IMAGES: Record<string, string> = {
+  pos: "/img/wpf-pos-salon.webp",
+  manager: "/img/product-manager-light.webp",
+  express: "/img/product-express-light.webp",
+  panel: "/img/panel-screen.png",
+  "online-siparis": "/img/product-online-siparis-light.webp",
 };
 
-function ProductCard({ product, index }: { product: Product; index: number }) {
-  const Icon = iconMap[product.icon];
-
-  return (
-    <ScrollReveal delay={index * 0.1}>
-      <Link href={`/urunler/${product.id}`} className="block h-full">
-        <div className="group relative bg-white border border-gray-100 rounded-2xl p-8 transition-all duration-300 hover:shadow-lg h-full">
-          {/* Colored icon */}
-          <div
-            className="flex items-center justify-center w-12 h-12 rounded-2xl"
-            style={{ backgroundColor: `${product.color}15` }}
-          >
-            {Icon && (
-              <Icon
-                size={24}
-                style={{ color: product.color }}
-                strokeWidth={1.5}
-              />
-            )}
-          </div>
-
-          {/* Product name */}
-          <h3 className="mt-5 text-xl font-semibold text-gray-900">
-            {product.name}
-          </h3>
-
-          {/* Platform badge */}
-          <span className="inline-block mt-2 px-3 py-1 text-xs font-medium text-gray-500 bg-gray-100 rounded-full">
-            {product.platform}
-          </span>
-
-          {/* Description */}
-          <p className="mt-3 text-gray-500 leading-relaxed">
-            {product.description}
-          </p>
-
-          {/* Link */}
-          <div
-            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold group-hover:gap-3 transition-all duration-300"
-            style={{ color: product.color }}
-          >
-            Detayli Incele
-            <ArrowRight size={16} />
-          </div>
-        </div>
-      </Link>
-    </ScrollReveal>
-  );
-}
+// Ham ekran görüntüsü olan ürünler cihaz çerçevesine sarılır.
+const PRODUCT_FRAMES: Record<string, "laptop" | "desktop"> = {
+  pos: "desktop",
+};
 
 export default function ProductsPage() {
   return (
     <>
-      <section className="pt-32 pb-24 md:pt-40 md:pb-32">
+      {/* Hero */}
+      <section className="pt-32 pb-12 md:pt-40 md:pb-16">
         <Container>
           <SectionHeader
-            label="Urun Ailesi"
-            title="Her ihtiyaciniz icin bir cozum."
-            subtitle="Restoran operasyonlarinizin her adimini kapsayan entegre urun ailesi."
+            label="Ürün Ailesi"
+            title="Her ihtiyacınız için bir çözüm."
+            subtitle="Restoran operasyonlarınızın her adımını kapsayan entegre ürün ailesi. Her biri tek başına güçlü, birlikte kusursuz."
           />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PRODUCTS.map((product, index) => (
-              <ProductCard key={product.id} product={product} index={index} />
-            ))}
-          </div>
         </Container>
       </section>
+
+      {/* Ürün başına bölüm — sırayla yön ve zemin değişir */}
+      {PRODUCTS.map((product, index) => (
+        <ProductSection
+          key={product.id}
+          product={product}
+          image={PRODUCT_IMAGES[product.id]}
+          frame={PRODUCT_FRAMES[product.id]}
+          customVisual={
+            product.id === "manager" ? (
+              <ManagerDualPhones />
+            ) : product.id === "express" ? (
+              <ExpressLiveMap />
+            ) : undefined
+          }
+          rounded={product.id === "panel"}
+          highlights={PRODUCT_DETAILS[product.id]?.highlights ?? []}
+          reverse={index % 2 === 1}
+          soft={index % 2 === 0}
+        />
+      ))}
 
       <CTASection />
     </>

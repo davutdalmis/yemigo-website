@@ -24,9 +24,9 @@ export default function ProductFeatureList({
     <section className="py-24 bg-white">
       <Container>
         <SectionHeader
-          label="Ozellikler"
-          title="Tum ozellikler, tek platformda."
-          subtitle="Isletmenizi buyutmek icin ihtiyaciniz olan her sey."
+          label="Özellikler"
+          title="Tüm özellikler, tek platformda."
+          subtitle="İşletmenizi büyütmek için ihtiyacınız olan her şey."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

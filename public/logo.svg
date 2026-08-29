@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" width="220" height="56" role="img" aria-label="YemiGO">
+  <defs>
+    <linearGradient id="yg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <text x="0" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif" font-size="40" font-weight="800" fill="#171717" letter-spacing="-1">Yemi</text>
+  <text x="108" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif" font-size="40" font-weight="800" fill="url(#yg-grad)" letter-spacing="-1">GO</text>
+</svg>

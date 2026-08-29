@@ -5,177 +5,177 @@ export default function ExpressPrivacyContent() {
     <Container>
       <div className="mx-auto max-w-3xl pt-32 pb-20">
         <h1 className="text-4xl font-bold tracking-tight mb-2">
-          Gizlilik Politikasi
+          Gizlilik Politikası
         </h1>
         <p className="text-sm text-gray-400 mb-12">
-          Son guncelleme: 12 Subat 2025
+          Son güncelleme: 12 Şubat 2025
         </p>
 
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
           YemiGO (&quot;biz&quot;, &quot;bizim&quot;) olarak, YemiGO Express
-          uygulamasini kullanan kuryelerimizin gizliligini korumaya onem
-          veriyoruz. Bu gizlilik politikasi, hangi bilgileri topladigimizi,
-          nasil kullandigimizi ve nasil korudugumuzu aciklar.
+          uygulamasını kullanan kuryelerimizin gizliliğini korumaya önem
+          veriyoruz. Bu gizlilik politikası, hangi bilgileri topladığımızı,
+          nasıl kullandığımızı ve nasıl koruduğumuzu açıklar.
         </p>
 
         <h2 className="text-xl font-semibold mt-10 mb-3">
-          1. Topladigimiz Bilgiler
+          1. Topladığımız Bilgiler
         </h2>
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          Uygulamamiz asagidaki bilgileri toplar:
+          Uygulamamız aşağıdaki bilgileri toplar:
         </p>
         <ul className="list-disc pl-5 text-[15px] leading-relaxed text-gray-600 mb-4">
           <li className="mb-2">
             <strong className="text-gray-900">Kimlik Bilgileri:</strong> Ad,
-            soyad ve telefon numarasi (giris ve hesap dogrulama icin)
+            soyad ve telefon numarası (giriş ve hesap doğrulama için)
           </li>
           <li className="mb-2">
-            <strong className="text-gray-900">Konum Bilgileri:</strong> Gercek
-            zamanli konum verisi (teslimat takibi ve yol tarifi icin)
+            <strong className="text-gray-900">Konum Bilgileri:</strong> Gerçek
+            zamanlı konum verisi (teslimat takibi ve yol tarifi için)
           </li>
           <li className="mb-2">
             <strong className="text-gray-900">Cihaz Bilgileri:</strong> Cihaz
-            modeli, isletim sistemi versiyonu ve benzersiz cihaz tanimlayicisi
+            modeli, işletim sistemi versiyonu ve benzersiz cihaz tanımlayıcısı
           </li>
           <li className="mb-2">
-            <strong className="text-gray-900">Kullanim Verileri:</strong>{" "}
-            Siparis gecmisi, teslimat sureleri ve kazanc bilgileri
-          </li>
-        </ul>
-
-        <h2 className="text-xl font-semibold mt-10 mb-3">
-          2. Bilgilerin Kullanim Amaci
-        </h2>
-        <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          Topladigimiz bilgileri asagidaki amaclarla kullaniriz:
-        </p>
-        <ul className="list-disc pl-5 text-[15px] leading-relaxed text-gray-600 mb-4">
-          <li className="mb-2">
-            Kurye kimlik dogrulamasi ve hesap yonetimi
-          </li>
-          <li className="mb-2">Siparis atama ve teslimat takibi</li>
-          <li className="mb-2">
-            Gercek zamanli konum paylasimi (musteri ve restoran ile)
-          </li>
-          <li className="mb-2">Kazanc hesaplama ve raporlama</li>
-          <li className="mb-2">Uygulama performansini iyilestirme</li>
-          <li className="mb-2">
-            Bildirim gonderme (yeni siparis, durum guncelleme)
+            <strong className="text-gray-900">Kullanım Verileri:</strong>{" "}
+            Sipariş geçmişi, teslimat süreleri ve kazanç bilgileri
           </li>
         </ul>
 
         <h2 className="text-xl font-semibold mt-10 mb-3">
-          3. Bilgi Paylasimi
+          2. Bilgilerin Kullanım Amacı
         </h2>
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          Kisisel bilgilerinizi ucuncu taraflarla{" "}
-          <strong className="text-gray-900">satmayiz</strong>. Bilgileriniz
-          yalnizca asagidaki durumlarda paylasilabilir:
+          Topladığımız bilgileri aşağıdaki amaçlarla kullanırız:
         </p>
         <ul className="list-disc pl-5 text-[15px] leading-relaxed text-gray-600 mb-4">
           <li className="mb-2">
-            <strong className="text-gray-900">Hizmet Saglayicilar:</strong>{" "}
-            Firebase (Google) - kimlik dogrulama, veritabani ve bildirim
-            hizmetleri icin
+            Kurye kimlik doğrulaması ve hesap yönetimi
+          </li>
+          <li className="mb-2">Sipariş atama ve teslimat takibi</li>
+          <li className="mb-2">
+            Gerçek zamanlı konum paylaşımı (müşteri ve restoran ile)
+          </li>
+          <li className="mb-2">Kazanç hesaplama ve raporlama</li>
+          <li className="mb-2">Uygulama performansını iyileştirme</li>
+          <li className="mb-2">
+            Bildirim gönderme (yeni sipariş, durum güncelleme)
+          </li>
+        </ul>
+
+        <h2 className="text-xl font-semibold mt-10 mb-3">
+          3. Bilgi Paylaşımı
+        </h2>
+        <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
+          Kişisel bilgilerinizi üçüncü taraflarla{" "}
+          <strong className="text-gray-900">satmayız</strong>. Bilgileriniz
+          yalnızca aşağıdaki durumlarda paylaşılabilir:
+        </p>
+        <ul className="list-disc pl-5 text-[15px] leading-relaxed text-gray-600 mb-4">
+          <li className="mb-2">
+            <strong className="text-gray-900">Hizmet Sağlayıcılar:</strong>{" "}
+            Firebase (Google) — kimlik doğrulama, veritabanı ve bildirim
+            hizmetleri için
           </li>
           <li className="mb-2">
             <strong className="text-gray-900">Yasal Zorunluluklar:</strong>{" "}
-            Yasalarin gerektirdigi durumlarda yetkili makamlarla
+            Yasaların gerektirdiği durumlarda yetkili makamlarla
           </li>
         </ul>
 
-        <h2 className="text-xl font-semibold mt-10 mb-3">4. Veri Guvenligi</h2>
+        <h2 className="text-xl font-semibold mt-10 mb-3">4. Veri Güvenliği</h2>
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          Verilerinizi korumak icin endustri standartlarinda guvenlik onlemleri
-          uygulariz:
+          Verilerinizi korumak için endüstri standartlarında güvenlik
+          önlemleri uygularız:
         </p>
         <ul className="list-disc pl-5 text-[15px] leading-relaxed text-gray-600 mb-4">
           <li className="mb-2">
-            Tum veri aktarimlari SSL/TLS sifreleme ile korunur
+            Tüm veri aktarımları SSL/TLS şifreleme ile korunur
           </li>
           <li className="mb-2">
-            Veriler Firebase altyapisinda guvenli bir sekilde saklanir
+            Veriler Firebase altyapısında güvenli bir şekilde saklanır
           </li>
           <li className="mb-2">
-            Erisim yetkilendirme kurallari ile sinirlandirilmistir
+            Erişim yetkilendirme kurallarıyla sınırlandırılmıştır
           </li>
         </ul>
 
         <h2 className="text-xl font-semibold mt-10 mb-3">5. Konum Verileri</h2>
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          Konum verileriniz yalnizca{" "}
-          <strong className="text-gray-900">aktif teslimat sirasinda</strong>{" "}
-          toplanir. Cevrimdisi oldugunuzda konum takibi durdurulur. Konum
-          verileriniz siparis takibi ve yol tarifi amaciyla kullanilir.
+          Konum verileriniz yalnızca{" "}
+          <strong className="text-gray-900">aktif teslimat sırasında</strong>{" "}
+          toplanır. Çevrimdışı olduğunuzda konum takibi durdurulur. Konum
+          verileriniz sipariş takibi ve yol tarifi amacıyla kullanılır.
         </p>
 
         <h2 className="text-xl font-semibold mt-10 mb-3">
-          6. Veri Saklama Suresi
+          6. Veri Saklama Süresi
         </h2>
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          Kisisel verileriniz hesabiniz aktif oldugu surece saklanir.
-          Hesabinizin silinmesini talep ettiginizde, verileriniz 30 gun icinde
-          kalici olarak silinir.
+          Kişisel verileriniz hesabınız aktif olduğu sürece saklanır.
+          Hesabınızın silinmesini talep ettiğinizde, verileriniz 30 gün içinde
+          kalıcı olarak silinir.
         </p>
 
-        <h2 className="text-xl font-semibold mt-10 mb-3">7. Haklariniz</h2>
+        <h2 className="text-xl font-semibold mt-10 mb-3">7. Haklarınız</h2>
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          Asagidaki haklara sahipsiniz:
+          Aşağıdaki haklara sahipsiniz:
         </p>
         <ul className="list-disc pl-5 text-[15px] leading-relaxed text-gray-600 mb-4">
-          <li className="mb-2">Kisisel verilerinize erisim talep etme</li>
-          <li className="mb-2">Verilerinizin duzeltilmesini isteme</li>
+          <li className="mb-2">Kişisel verilerinize erişim talep etme</li>
+          <li className="mb-2">Verilerinizin düzeltilmesini isteme</li>
           <li className="mb-2">Verilerinizin silinmesini talep etme</li>
-          <li className="mb-2">Veri islemeye itiraz etme</li>
+          <li className="mb-2">Veri işlemeye itiraz etme</li>
         </ul>
 
         <h2 className="text-xl font-semibold mt-10 mb-3">
-          8. Ucuncu Taraf Hizmetler
+          8. Üçüncü Taraf Hizmetler
         </h2>
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          Uygulamamiz asagidaki ucuncu taraf hizmetlerini kullanir:
+          Uygulamamız aşağıdaki üçüncü taraf hizmetlerini kullanır:
         </p>
         <ul className="list-disc pl-5 text-[15px] leading-relaxed text-gray-600 mb-4">
           <li className="mb-2">
             <strong className="text-gray-900">Firebase Authentication:</strong>{" "}
-            Telefon numarasi ile kimlik dogrulama
+            Telefon numarası ile kimlik doğrulama
           </li>
           <li className="mb-2">
             <strong className="text-gray-900">
               Firebase Cloud Firestore:
             </strong>{" "}
-            Veritabani ve veri senkronizasyonu
+            Veritabanı ve veri senkronizasyonu
           </li>
           <li className="mb-2">
             <strong className="text-gray-900">
               Firebase Cloud Messaging:
             </strong>{" "}
-            Anlik bildirimler
+            Anlık bildirimler
           </li>
           <li className="mb-2">
-            <strong className="text-gray-900">Apple Maps:</strong> Harita ve yol
-            tarifi
+            <strong className="text-gray-900">Apple Maps:</strong> Harita ve
+            yol tarifi
           </li>
         </ul>
 
         <h2 className="text-xl font-semibold mt-10 mb-3">
-          9. Cocuklarin Gizliligi
+          9. Çocukların Gizliliği
         </h2>
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          Uygulamamiz 18 yasindan kucuk bireylere yonelik degildir. Bilerek
-          cocuklardan kisisel bilgi toplamayiz.
+          Uygulamamız 18 yaşından küçük bireylere yönelik değildir. Bilerek
+          çocuklardan kişisel bilgi toplamayız.
         </p>
 
-        <h2 className="text-xl font-semibold mt-10 mb-3">10. Degisiklikler</h2>
+        <h2 className="text-xl font-semibold mt-10 mb-3">10. Değişiklikler</h2>
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          Bu gizlilik politikasini zaman zaman guncelleyebiliriz. Onemli
-          degisikliklerde uygulama icinden bildirim gondeririz.
+          Bu gizlilik politikasını zaman zaman güncelleyebiliriz. Önemli
+          değişikliklerde uygulama içinden bildirim göndeririz.
         </p>
 
-        <h2 className="text-xl font-semibold mt-10 mb-3">11. Iletisim</h2>
+        <h2 className="text-xl font-semibold mt-10 mb-3">11. İletişim</h2>
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          Gizlilik politikamiz hakkinda sorulariniz icin bizimle iletisime
-          gecebilirsiniz:
+          Gizlilik politikamız hakkında sorularınız için bizimle iletişime
+          geçebilirsiniz:
         </p>
         <ul className="list-disc pl-5 text-[15px] leading-relaxed text-gray-600 mb-4">
           <li className="mb-2">
