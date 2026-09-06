@@ -15,11 +15,11 @@ export const PRODUCTS: Product[] = [
     id: "pos",
     name: "YemiGO POS",
     tagline: "Merkezi sipariş yönetimi",
-    platform: "Windows",
+    platform: "Windows · iPad (masa siparişi)",
     icon: "Monitor",
     color: "#7C3AED",
     description:
-      "Kasadan mutfağa, masadan paket servise — tüm sipariş akışını tek ekrandan yönetin. Platform entegrasyonları, stok takibi ve muhasebe dahil.",
+      "Kasadan mutfağa, masadan paket servise — tüm sipariş akışını tek ekrandan yönetin. Platform entegrasyonları, stok takibi ve muhasebe dahil. Garsonlar masa siparişini iPad'deki Tablet POS ile alır.",
   },
   {
     id: "manager",
@@ -205,7 +205,7 @@ export const PRODUCT_DETAILS: Record<string, ProductDetail> = {
     tagline: "Restoranınızın dijital beyni.",
     heroDescription:
       "Masadan paket servise, kasadan mutfağa — tüm sipariş akışını tek ekrandan yönetin. YemekSepeti, GetirYemek ve TrendyolGo siparişleri otomatik olarak ekranınıza düşer.",
-    platform: "Windows",
+    platform: "Windows · iPad (masa siparişi)",
     icon: "Monitor",
     color: "#7C3AED",
     mockupType: "desktop",
@@ -244,6 +244,12 @@ export const PRODUCT_DETAILS: Record<string, ProductDetail> = {
         icon: "BarChart3",
         title: "Günlük Rapor",
         description: "Kasa kapanışı, satış özeti ve Z raporu tek tıkla.",
+      },
+      {
+        icon: "Tablet",
+        title: "Tablet POS (iPad)",
+        description:
+          "Garsonlar masa siparişini iPad'den alır, adisyon anında kasaya ve mutfağa düşer. App Store'da.",
       },
     ],
     highlights: [
@@ -553,8 +559,8 @@ export const PLANS: PricingPlan[] = [
       "Üretim / imalat merkezi",
       "Özel & B2B entegrasyonlar",
       "Dedicated hesap yöneticisi",
-      "SLA garantisi",
-      "7/24 telefon desteği",
+      "Sözleşmeli hizmet seviyesi (SLA)",
+      "Öncelikli telefon desteği",
       "Yerinde eğitim",
     ],
     highlighted: false,

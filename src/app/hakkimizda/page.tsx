@@ -52,7 +52,7 @@ const VALUES = [
     icon: Shield,
     title: "Güvenilirlik",
     description:
-      "Verileriniz şifreli iletim ve otomatik yedekleme ile korunur. %99.9 uptime garantisi ile işletmeniz hiç durmaz.",
+      "Verileriniz şifreli iletim ve günlük otomatik yedekleme ile korunur. İnternet kesilse bile kasa çalışmaya devam eder, bağlantı gelince kendini eşitler.",
   },
   {
     icon: Lightbulb,
