@@ -55,7 +55,7 @@ export default function ExpressPrivacyContent() {
           </li>
           <li className="mb-2">Sipariş atama ve teslimat takibi</li>
           <li className="mb-2">
-            Gerçek zamanlı konum paylaşımı (müşteri ve restoran ile)
+            Gerçek zamanlı konum paylaşımı (bağlı olduğunuz restoran ile)
           </li>
           <li className="mb-2">Kazanç hesaplama ve raporlama</li>
           <li className="mb-2">Uygulama performansını iyileştirme</li>
@@ -103,9 +103,9 @@ export default function ExpressPrivacyContent() {
 
         <h2 className="text-xl font-semibold mt-10 mb-3">5. Konum Verileri</h2>
         <p className="text-[15px] leading-relaxed text-gray-600 mb-4">
-          Konum verileriniz yalnızca{" "}
-          <strong className="text-gray-900">aktif teslimat sırasında</strong>{" "}
-          toplanır. Çevrimdışı olduğunuzda konum takibi durdurulur. Konum
+          Konum verileriniz yalnızca uygulamada{" "}
+          <strong className="text-gray-900">&quot;görevde&quot; durumundayken</strong>{" "}
+          toplanır. Görevden çıktığınızda konum takibi durdurulur. Konum
           verileriniz sipariş takibi ve yol tarifi amacıyla kullanılır.
         </p>
 

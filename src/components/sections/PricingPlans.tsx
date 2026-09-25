@@ -69,7 +69,7 @@ export default function PricingPlans() {
 
       {/* Güven şeridi — fiyatların yanında: kurulum ücreti yok vurgusu */}
       <div className="mx-auto mb-10 flex max-w-3xl flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium text-apple-text-soft">
-        {["Kurulum ve eğitim dahil", "Zorunlu sözleşme yok", "İstediğiniz zaman iptal"].map(
+        {["Eğitim dahil", "Geçişte kurulum ücretsiz", "Zorunlu sözleşme yok", "İstediğiniz zaman iptal"].map(
           (item) => (
             <span key={item} className="inline-flex items-center gap-1.5">
               <BadgeCheck size={16} className="text-indigo-600" strokeWidth={2} />

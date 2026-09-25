@@ -29,8 +29,8 @@ export default function CTASection() {
             </span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg text-apple-text-soft">
-            Kurulumu ve eğitimi biz yapıyoruz. Mevcut taahhüdünüz bitene
-            kadar ücretsiz.
+            Kurulumu ve eğitimi biz yapıyoruz. Başka sistemden geçiyorsanız,
+            mevcut taahhüdünüz bitene kadar ücretsiz.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">

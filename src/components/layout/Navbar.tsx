@@ -160,7 +160,7 @@ export default function Navbar() {
                     : "bg-indigo-600 text-white hover:bg-indigo-700"
                 }`}
               >
-                Ücretsiz Deneyin
+                Ücretsiz Demo
               </Link>
             </div>
 
@@ -244,7 +244,7 @@ export default function Navbar() {
                     href="/iletisim"
                     className="block w-full rounded-full bg-indigo-600 px-6 py-3 text-center text-sm font-semibold text-white transition-all hover:bg-indigo-700"
                   >
-                    Ücretsiz Deneyin
+                    Ücretsiz Demo
                   </Link>
                 </div>
               </div>

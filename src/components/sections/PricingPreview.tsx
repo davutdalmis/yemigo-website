@@ -76,7 +76,7 @@ function MobilePricingPreview() {
       </Link>
 
       <p className="mt-5 text-[13px] text-apple-text-muted">
-        Ücretsiz demo · Kurulum ve eğitim dahil
+        Ücretsiz demo · Eğitim dahil
       </p>
     </div>
   );
@@ -89,7 +89,7 @@ export default function PricingPreview() {
         <SectionHeader
           label="Fiyatlandırma"
           title="Şeffaf, ölçeklenebilir, tahmin edilebilir."
-          subtitle="Tek şubeden çok şubeli zincirlere — büyüdükçe ödeyin. Kurulum ve eğitim her planda dahil."
+          subtitle="Tek şubeden çok şubeli zincirlere — büyüdükçe ödeyin. Eğitim her planda dahil, geçişte kurulum ücretsiz."
         />
 
         {/* Masaüstü — tam planlar */}
@@ -97,7 +97,7 @@ export default function PricingPreview() {
           <PricingPlans />
 
           <p className="mt-12 text-center text-sm text-apple-text-muted">
-            Tüm planlarda kurulum ve eğitim dahil. Zorunlu sözleşme yok.
+            Tüm planlarda eğitim dahil. Geçişte kurulum ücretsiz. Zorunlu sözleşme yok.
           </p>
         </div>
 

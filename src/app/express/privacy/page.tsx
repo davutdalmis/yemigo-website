@@ -76,8 +76,8 @@ export default function ExpressPrivacyPage() {
           </li>
           <li className="mb-2">
             Konum, bağlı olduğu restoran/işletmenin kurye takip ekranında gerçek
-            zamanlı gösterilir; böylece işletme ve müşteri teslimatın nerede
-            olduğunu görebilir.
+            zamanlı gösterilir; böylece işletme teslimatın nerede olduğunu
+            görebilir.
           </li>
           <li className="mb-2">
             <strong className="text-gray-900">Arka plan konumu:</strong>{" "}

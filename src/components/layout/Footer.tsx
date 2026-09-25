@@ -65,11 +65,11 @@ export default function Footer() {
 
             <div className="mt-8 flex flex-col gap-3 text-sm">
               <a
-                href="mailto:merhaba@yemigo.com"
+                href="mailto:info@yemigo.com"
                 className="inline-flex items-center gap-2 text-apple-text-soft transition-colors hover:text-apple-text"
               >
                 <Mail size={14} />
-                merhaba@yemigo.com
+                info@yemigo.com
               </a>
               <a
                 href="tel:+905320563400"

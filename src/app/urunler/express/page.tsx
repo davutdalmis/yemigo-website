@@ -8,7 +8,7 @@ import CTASection from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: "YemiGO Express | YemiGO",
   description:
-    "Akıllı kurye atama, rota optimizasyonu ve canlı konum takibi. Teslimat sürelerinizi kısaltın, müşteri memnuniyetini artırın.",
+    "Kurye atama, tek tıkla yol tarifi ve canlı konum takibi. Teslimat sürecini baştan sona kendiniz yönetin.",
 };
 
 export default function ExpressPage() {

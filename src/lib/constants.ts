@@ -19,7 +19,7 @@ export const PRODUCTS: Product[] = [
     icon: "Monitor",
     color: "#7C3AED",
     description:
-      "Kasadan mutfağa, masadan paket servise — tüm sipariş akışını tek ekrandan yönetin. Platform entegrasyonları, stok takibi ve muhasebe dahil. Garsonlar masa siparişini iPad'deki Tablet POS ile alır.",
+      "Kasadan mutfağa, masadan paket servise — tüm sipariş akışını tek ekrandan yönetin. Platform entegrasyonları ve stok takibi dahil. Garsonlar masa siparişini iPad'deki garson terminaliyle alır.",
   },
   {
     id: "manager",
@@ -39,7 +39,7 @@ export const PRODUCTS: Product[] = [
     icon: "Truck",
     color: "#C084FC",
     description:
-      "Akıllı kurye atama, rota optimizasyonu ve canlı konum takibi. Teslimat sürelerinizi kısaltın, müşteri memnuniyetini artırın.",
+      "Kurye atama, tek tıkla yol tarifi ve canlı konum takibi. Teslimat sürecini baştan sona kendiniz yönetin.",
   },
   {
     id: "panel",
@@ -83,16 +83,16 @@ export const FEATURES: Feature[] = [
     kicker: "Üretim → Şube",
     title: "Satış noktası değil, tüm zincir",
     description:
-      "Reçeteden otomatik stok düşümü, merkez mutfak üretimi ve şubeye sevkiyat — hepsi POS'a gömülü. Çoğu POS satışta durur; YemiGO üretimden masaya tüm halkayı yönetir.",
+      "Reçeteden otomatik stok düşümü, merkez mutfak üretimi ve şubeye sevkiyat — hepsi aynı platformda. Çoğu POS satışta durur; YemiGO üretimden masaya tüm halkayı yönetir.",
     points: ["Reçete → stok", "Mal kabul", "Sevkiyat terminali"],
     accent: "indigo",
   },
   {
     icon: "MonitorSmartphone",
     kicker: "Platformlar",
-    title: "Beş platform, tek ekran, tek mutabakat",
+    title: "Beş platform, tek ekran, tek gün sonu",
     description:
-      "YemekSepeti, Getir, Trendyol Go, Migros ve Fuudy siparişleri otomatik POS'a düşer. Her platform için günlük ciro mutabakatı çalışır — tek kuruş kaçmaz.",
+      "YemekSepeti, Getir, Trendyol Go, Migros ve Fuudy siparişleri otomatik POS'a düşer. Tüm kanalların cirosu tek gün sonu raporunda birleşir.",
     points: ["YemekSepeti", "Getir", "Trendyol Go", "Migros", "Fuudy"],
     accent: "orange",
   },
@@ -101,8 +101,8 @@ export const FEATURES: Feature[] = [
     kicker: "Teslimat",
     title: "Kendi kuryeniz, kendi terminaliniz",
     description:
-      "Native kurye uygulaması ve QR ile eşlenen el terminali. Zimmet, teslim, canlı konum ve rota — teslimat sürecini uçtan uca siz yönetin, platforma bağımlı kalmayın.",
-    points: ["Canlı konum", "QR cihaz eşleme", "Zimmet / teslim"],
+      "Native kurye uygulamasıyla canlı konum ve tek tıkla yol tarifi; QR ile eşlenen sevkiyat terminaliyle merkezden şubeye zimmet ve teslim. Teslimatı siz yönetin, platforma bağımlı kalmayın.",
+    points: ["Canlı konum", "Sevkiyat terminali", "Zimmet / teslim"],
     accent: "indigo",
   },
   {
@@ -110,8 +110,8 @@ export const FEATURES: Feature[] = [
     kicker: "Kendi Kanalınız",
     title: "Komisyonsuz kendi sipariş kanalınız",
     description:
-      "Markanızla QR menü ve online sipariş sitesi. Mahalle bazlı teslimat bölgeleri ve WhatsApp bildirimi ile siparişler doğrudan POS'a düşer — platform komisyonu yok.",
-    points: ["QR menü", "Mahalle bölgeleri", "WhatsApp"],
+      "Markanızla QR menü ve online sipariş sitesi. Müşteriler siparişi siteden ya da WhatsApp'tan verir, sipariş doğrudan POS'a düşer — platform komisyonu yok.",
+    points: ["QR menü", "Online sipariş", "WhatsApp ile sipariş"],
     accent: "orange",
   },
   {
@@ -119,7 +119,7 @@ export const FEATURES: Feature[] = [
     kicker: "Altyapı",
     title: "Gerçek zamanlı, çok cihazlı, offline-dayanıklı",
     description:
-      "Firebase ile masa, ödeme ve sipariş her cihazda anında senkron. Çok terminalli ödeme kilidi çift kapanışı önler; internet kesilse de yerel kuyruk sayesinde satış durmaz.",
+      "Firebase ile masa, ödeme ve sipariş her cihazda anında senkron. Çok terminalli ödeme kilidi aynı masanın iki kasadan kapatılmasını önler; internet kesilse de ana kasada satış sürer, kayıtlar bağlantı gelince eşitlenir.",
     points: ["Anlık senkron", "Ödeme kilidi", "Offline kuyruk"],
     accent: "indigo",
   },
@@ -128,8 +128,8 @@ export const FEATURES: Feature[] = [
     kicker: "Güvenlik",
     title: "Gelir bütünlüğü ve kurumsal güvenlik",
     description:
-      "Parçalı ödeme kayması ve çift tahsilat koruması, imzalı (ED25519) otomatik güncelleme, rol bazlı erişim ve KVKK uyumu — cironuz ve verileriniz güvende.",
-    points: ["Mutabakat ağı", "İmzalı güncelleme", "KVKK / RBAC"],
+      "Parçalı ödeme kayması ve çift tahsilat koruması, imzalı (ED25519) otomatik güncelleme, rol bazlı erişim ve günlük yedekleme — cironuz ve verileriniz güvende.",
+    points: ["Çift tahsilat koruması", "İmzalı güncelleme", "Rol bazlı erişim"],
     accent: "orange",
   },
 ];
@@ -232,7 +232,7 @@ export const PRODUCT_DETAILS: Record<string, ProductDetail> = {
         icon: "Printer",
         title: "Termal Yazıcı",
         description:
-          "Adisyon, mutfak fişi ve fatura yazdırma. ESC/POS uyumlu.",
+          "Adisyon, mutfak, bar ve paket fişi yazdırma. ESC/POS uyumlu.",
       },
       {
         icon: "Layers",
@@ -243,13 +243,13 @@ export const PRODUCT_DETAILS: Record<string, ProductDetail> = {
       {
         icon: "BarChart3",
         title: "Günlük Rapor",
-        description: "Kasa kapanışı, satış özeti ve Z raporu tek tıkla.",
+        description: "Kasa sayımı, gün sonu raporu ve satış özeti.",
       },
       {
         icon: "Tablet",
-        title: "Tablet POS (iPad)",
+        title: "iPad Garson Terminali",
         description:
-          "Garsonlar masa siparişini iPad'den alır, adisyon anında kasaya ve mutfağa düşer. App Store'da.",
+          "Garsonlar masa siparişini iPad'den alır, sipariş anında kasaya ve mutfağa düşer. Ödeme kasada alınır.",
       },
     ],
     highlights: [
@@ -280,7 +280,7 @@ export const PRODUCT_DETAILS: Record<string, ProductDetail> = {
         icon: "MapPin",
         title: "Kurye Takibi",
         description:
-          "Harita üzerinde tüm kuryelerin canlı konumunu izleyin.",
+          "Şubenizin kuryelerini harita üzerinde canlı izleyin.",
       },
       {
         icon: "Bell",
@@ -292,26 +292,26 @@ export const PRODUCT_DETAILS: Record<string, ProductDetail> = {
         icon: "Users",
         title: "Personel Yönetimi",
         description:
-          "Çalışan rolleri, vardiya planlama ve performans takibi.",
+          "Çalışanlarınızı ve rollerini tek listede görün.",
       },
       {
         icon: "Building2",
         title: "Çoklu Şube",
         description:
-          "Tüm şubelerinizi tek uygulamadan karşılaştırın ve yönetin.",
+          "Tüm şubelerinizin günlük cirosunu tek uygulamada görün.",
       },
       {
         icon: "FileText",
         title: "Detaylı Raporlar",
         description:
-          "Ürün bazlı satış, kategori analizi ve trend grafikleri.",
+          "Ürün bazlı satış ve trend grafikleri.",
       },
     ],
     highlights: [
       "Native iOS ve Android",
-      "Face ID / parmak izi giriş",
-      "Offline rapor görüntüleme",
-      "Widget desteği",
+      "Telefon + SMS kodu ile giriş",
+      "Platformları uzaktan aç / kapat",
+      "PDF ciro raporu",
     ],
   },
   express: {
@@ -319,7 +319,7 @@ export const PRODUCT_DETAILS: Record<string, ProductDetail> = {
     name: "YemiGO Express",
     tagline: "Teslimat sürecinin tam kontrolü.",
     heroDescription:
-      "Kurye atama, rota planlama ve canlı konum takibi. Teslimat sürelerinizi kısaltın, müşteri memnuniyetini artırın.",
+      "Kurye atama, yol tarifi ve canlı konum takibi. Teslimat sürecini baştan sona kendiniz yönetin.",
     platform: "iOS / Android",
     icon: "Truck",
     color: "#C084FC",
@@ -333,40 +333,40 @@ export const PRODUCT_DETAILS: Record<string, ProductDetail> = {
       },
       {
         icon: "Route",
-        title: "Rota Optimizasyonu",
+        title: "Tek Tıkla Yol Tarifi",
         description:
-          "En kısa ve en hızlı teslimat rotasını otomatik hesaplama.",
+          "Teslimat adresine Google veya Apple Haritalar ile anında yol tarifi.",
       },
       {
         icon: "Clock",
-        title: "Sipariş Kabul",
+        title: "Sipariş Takibi",
         description:
-          "Yeni siparişleri anında görme, kabul etme ve teslim sürecini başlat.",
+          "Atanan siparişleri anında görün; teslim aldım / teslim ettim ile süreci yönetin.",
       },
       {
         icon: "Wallet",
-        title: "Kazanç Takibi",
+        title: "Teslimat Özeti",
         description:
-          "Günlük, haftalık ve aylık kazanç raporları ve prim hesaplama.",
+          "Günlük ve haftalık teslimat sayısı ve tutarları.",
       },
       {
         icon: "Star",
-        title: "Performans Skoru",
+        title: "Bağlantı Kopsa da Çalışır",
         description:
-          "Teslimat süresi, müşteri puanı ve tamamlama oranı metrikleri.",
+          "Bağlantı koptuğunda siparişler görünür kalır, durum güncellemeleri bağlantı gelince gönderilir.",
       },
       {
         icon: "Bell",
         title: "Push Bildirim",
         description:
-          "Yeni sipariş geldiğinde anında sesli ve görsel bildirim.",
+          "Yeni sipariş atandığında anında sesli ve görsel bildirim.",
       },
     ],
     highlights: [
       "Pil dostu GPS takibi",
       "Tek tıkla navigasyon",
       "Offline sipariş görüntüleme",
-      "Kurye chat",
+      "SMS kodu ile hızlı giriş",
     ],
   },
   panel: {
@@ -390,19 +390,19 @@ export const PRODUCT_DETAILS: Record<string, ProductDetail> = {
         icon: "UtensilsCrossed",
         title: "Menü Yönetimi",
         description:
-          "Ürün, kategori, fiyat ve görsel düzenlemeleri web üzerinden yapın.",
+          "Ürün, kategori ve fiyat düzenlemelerini web üzerinden yapın.",
       },
       {
         icon: "QrCode",
         title: "QR Menü",
         description:
-          "Dijital menü oluşturun, QR kodları yazdırın, masadan sipariş alın.",
+          "QR menünüzü düzenleyin, masa QR kodlarını indirip yazdırın, masadan sipariş alın.",
       },
       {
         icon: "Package",
         title: "Stok Takibi",
         description:
-          "Hammadde, reçete ve stok hareketlerini yönetin. Kritik stok uyarısı.",
+          "Hammadde, reçete ve stok hareketlerini yönetin. Kritik stokları ekranda görün.",
       },
       {
         icon: "Users",
@@ -420,7 +420,7 @@ export const PRODUCT_DETAILS: Record<string, ProductDetail> = {
     highlights: [
       "Her cihazdan erişim",
       "Gerçek zamanlı veri",
-      "Excel/CSV export",
+      "Excel dışa aktarma",
       "Özel tarih aralığı",
     ],
   },
@@ -454,28 +454,28 @@ export const PRODUCT_DETAILS: Record<string, ProductDetail> = {
       },
       {
         icon: "MessageSquare",
-        title: "WhatsApp Entegrasyonu",
+        title: "WhatsApp ile Sipariş",
         description:
-          "Sipariş onayları ve takip bilgileri WhatsApp üzerinden.",
+          "Müşteriler sepetini tek tıkla WhatsApp'tan gönderir, sipariş aynı anda sisteme kaydolur.",
       },
       {
         icon: "Palette",
         title: "Marka Özelleştirme",
         description:
-          "Logo, renk ve menü düzeni ile kendi markanızı yansıtın.",
+          "Logo, ürün görselleri ve kategori sırası ile kendi markanızı yansıtın.",
       },
       {
         icon: "TrendingUp",
-        title: "Sipariş Analizi",
+        title: "İndirim ve Kampanya",
         description:
-          "En çok satan ürünler, sipariş saatleri ve müşteri davranışları.",
+          "Ürüne veya kategoriye yüzde ya da tutar indirimi, karşılama duyurusu.",
       },
     ],
     highlights: [
       "Sıfır komisyon",
       "Anında POS'a düşme",
       "Mobil uyumlu",
-      "SEO dostu",
+      "Üyeliksiz sipariş",
     ],
   },
 };
@@ -515,12 +515,12 @@ export const PLANS: PricingPlan[] = [
       "Offline çalışma",
       "Online sipariş sitesi",
       "QR menü (masadan sipariş)",
-      "WhatsApp sipariş bildirimi",
+      "WhatsApp ile sipariş",
       "Temel raporlama",
       "E-posta destek",
     ],
     highlighted: false,
-    cta: "Ücretsiz Deneyin",
+    cta: "Ücretsiz Demo",
   },
   {
     id: "professional",
@@ -539,7 +539,7 @@ export const PLANS: PricingPlan[] = [
       "Kurye yönetimi & canlı takip",
       "Çoklu şube karşılaştırma",
       "Gelişmiş raporlama & analiz",
-      "Excel / CSV dışa aktarma",
+      "Excel dışa aktarma",
       "Öncelikli destek",
     ],
     highlighted: true,
@@ -557,7 +557,7 @@ export const PLANS: PricingPlan[] = [
     features: [
       "Sınırsız şube",
       "Üretim / imalat merkezi",
-      "Özel & B2B entegrasyonlar",
+      "Özel entegrasyon projeleri",
       "Dedicated hesap yöneticisi",
       "Sözleşmeli hizmet seviyesi (SLA)",
       "Öncelikli telefon desteği",

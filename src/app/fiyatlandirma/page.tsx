@@ -6,7 +6,7 @@ import CTASection from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: "Fiyatlandırma | YemiGO",
   description:
-    "YemiGO restoran yönetim platformu fiyatları. Tek şubeden çok şubeli zincirlere şeffaf paketler — YemekSepeti, Getir, Trendyol Go, Migros ve Fuudy entegrasyonları, kurye takibi, stok ve raporlama dahil. Kurulum ve eğitim ücretsiz.",
+    "YemiGO restoran yönetim platformu fiyatları. Tek şubeden çok şubeli zincirlere şeffaf paketler — YemekSepeti, Getir, Trendyol Go, Migros ve Fuudy entegrasyonları, kurye takibi, stok ve raporlama dahil. Eğitim ücretsiz, geçişte kurulum ücretsiz.",
 };
 
 export default function FiyatlandirmaPage() {
@@ -35,9 +35,11 @@ export default function FiyatlandirmaPage() {
           </div>
 
           <p className="mx-auto mt-12 max-w-2xl text-center text-sm text-apple-text-muted">
-            Fiyatlara KDV dahil değildir. Kurulum, veri aktarımı ve personel
-            eğitimi her planda ücretsizdir. Mevcut sağlayıcınızla taahhüdünüz
-            varsa, taahhüdünüz bitene kadar YemiGO&apos;yu ücretsiz kullanırsınız.
+            Fiyatlara KDV dahil değildir. Personel eğitimi her planda ücretsizdir.
+            Başka bir sistemden geçişte kurulum ve veri aktarımı ücretsizdir; yeni
+            açılışlarda tek seferlik kurulum ücreti uygulanır. Mevcut sağlayıcınızla
+            taahhüdünüz varsa, sözleşmenizi belgelemeniz koşuluyla taahhüdünüz
+            bitene kadar YemiGO&apos;yu ücretsiz kullanırsınız.
           </p>
         </Container>
       </section>
