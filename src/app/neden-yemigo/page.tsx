@@ -12,7 +12,7 @@ import { FEATURES } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Neden YemiGO? | YemiGO",
   description:
-    "Üretimden şubeye, beş platformdan kendi kuryenize — YemiGO restoranınızın her halkasını tek platformda, gerçek zamanlı ve güvenli yönetir. Sektörde gerçek farkımız.",
+    "Üretimden şubeye, paket platformlarından kendi kuryenize — YemiGO restoranınızın her halkasını tek platformda, gerçek zamanlı ve güvenli yönetir. Sektörde gerçek farkımız.",
 };
 
 export default function NedenYemigoPage() {

@@ -24,7 +24,7 @@ export const iconMap: Record<string, LucideIcon> = {
 export const SECTION_LABEL = "Neden YemiGO";
 export const SECTION_TITLE = "Satış noktası değil, tüm zincir.";
 export const SECTION_SUBTITLE =
-  "Üretimden şubeye, beş platformdan kendi kuryenize — restoranınızın her halkası tek platformda, gerçek zamanlı ve güvenli.";
+  "Üretimden şubeye, paket platformlarından kendi kuryenize — restoranınızın her halkası tek platformda, gerçek zamanlı ve güvenli.";
 
 export function FeatureVisual({
   feature,

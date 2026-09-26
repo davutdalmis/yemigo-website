@@ -61,10 +61,10 @@ export default function IntegrationLogos() {
         <SectionHeader
           label="Entegrasyon"
           title="Tek ekran, tüm platformlar."
-          subtitle="YemekSepeti, Getir Yemek, Trendyol Go, Migros Yemek ve Fuudy siparişleri otomatik olarak POS ekranınıza düşer — kanal kaybı, kaçan sipariş yok."
+          subtitle="YemekSepeti, Uber Eats ve Migros Yemek siparişleri otomatik olarak POS ekranınıza düşer — kanal kaybı, kaçan sipariş yok."
         />
 
-        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-5">
+        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-3">
           {INTEGRATIONS.map((platform, i) => (
             <ScrollReveal key={platform.id} delay={i * 0.06}>
               <IntegrationTile platform={platform} />

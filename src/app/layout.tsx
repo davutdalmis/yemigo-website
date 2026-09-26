@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "online sipariş",
     "kurye takip",
     "yemeksepeti entegrasyon",
-    "getir entegrasyon",
+    "uber eats entegrasyon",
   ],
   authors: [{ name: "YemiGO" }],
   creator: "YemiGO",

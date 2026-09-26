@@ -68,7 +68,7 @@ export default function ManagerPrivacyPage() {
             İşletme sahibi kimlik doğrulaması ve hesap yönetimi
           </li>
           <li className="mb-2">
-            Sipariş yönetimi ve takibi (YemekSepeti, GetirYemek, TrendyolGo)
+            Sipariş yönetimi ve takibi (YemekSepeti, Uber Eats, Migros Yemek)
           </li>
           <li className="mb-2">
             Kurye yönetimi ve gerçek zamanlı teslimat takibi
