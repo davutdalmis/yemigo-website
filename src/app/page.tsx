@@ -58,10 +58,13 @@ function ImageTile(props: {
 
 // Anasayfa fiyat kartı: planın öne çıkan 4 maddesi (tam liste /fiyatlandirma'da)
 const PLAN_HIGHLIGHTS: Record<string, string[]> = {
-  starter: ["YemiGO POS (masa, paket, gel-al)", "Online sipariş sitesi ve QR menü", "WhatsApp ile sipariş", "Offline çalışma"],
+  starter: ["YemiGO POS (masa, paket, gel-al)", "Online sipariş sitesi ve QR menü", "Yazarkasa ve e-Fatura / e-Arşiv", "Offline çalışma"],
   professional: ["Manager, Express ve Panel", "YemekSepeti, Uber Eats, Migros Yemek", "Stok ve reçete yönetimi", "Kurye yönetimi ve canlı takip"],
   enterprise: ["Sınırsız şube", "Üretim / imalat merkezi", "Özel entegrasyon projeleri", "Yerinde eğitim"],
 };
+
+// Yazarkasa ve e-belge entegrasyonları (logo dosyası yok, metin olarak gösterilir)
+const FISCAL_INTEGRATIONS = ["Ingenico yazarkasa", "Paraşüt", "Uyumsoft"];
 
 const WHY = [
   {
@@ -183,6 +186,18 @@ export default function HomePage() {
               <div key={p.id} className="yh-logo-pill">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={p.logo} alt={p.name} loading="lazy" />
+              </div>
+            ))}
+          </div>
+
+          <h3 className="yh-title yh-title-sm">Yazarkasa ve e-Fatura dahil.</h3>
+          <p className="yh-subtitle">
+            Ödeme alınınca fiş yazarkasadan otomatik çıkar; e-Fatura ve e-Arşiv kasadan kesilir. Ek modül ücreti yok.
+          </p>
+          <div className="yh-logos">
+            {FISCAL_INTEGRATIONS.map((name) => (
+              <div key={name} className="yh-logo-pill yh-logo-text">
+                {name}
               </div>
             ))}
           </div>

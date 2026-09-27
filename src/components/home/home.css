@@ -140,6 +140,8 @@
 /* ── Platform logoları ── */
 .yh-logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 18px; margin-top: 36px; }
 .yh-logo-pill { background: var(--yh-chip); border-radius: 100px; height: 64px; padding: 0 32px; display: flex; align-items: center; justify-content: center; min-width: 180px; }
+.yh-logo-text { font-size: 18px; font-weight: 600; color: var(--yh-ink); letter-spacing: -.01em; }
+.yh-title-sm { font-size: clamp(24px, 2.4vw, 32px); margin-top: 72px; }
 .yh-logo-pill img { height: 30px; width: auto; max-width: 150px; object-fit: contain; }
 
 /* ── Neden YemiGO bandı ── */
