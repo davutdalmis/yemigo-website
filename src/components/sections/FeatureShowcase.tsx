@@ -111,7 +111,7 @@ function MinimalWhy() {
           align="left"
         />
 
-        <div className="mt-2 grid grid-cols-2 gap-3">
+        <div className="mt-2 grid grid-cols-2 gap-3 [&>*:last-child:nth-child(odd)]:col-span-2">
           {FEATURES.map((feature, i) => {
             const Icon = iconMap[feature.icon];
             const accent = feature.accent ?? (i % 2 === 0 ? "indigo" : "orange");

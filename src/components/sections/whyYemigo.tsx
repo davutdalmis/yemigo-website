@@ -7,6 +7,7 @@ import {
   BadgePercent,
   RefreshCw,
   ShieldCheck,
+  Receipt,
   type LucideIcon,
 } from "lucide-react";
 import ScrollReveal from "@/components/animations/ScrollReveal";
@@ -19,6 +20,7 @@ export const iconMap: Record<string, LucideIcon> = {
   BadgePercent,
   RefreshCw,
   ShieldCheck,
+  Receipt,
 };
 
 export const SECTION_LABEL = "Neden YemiGO";

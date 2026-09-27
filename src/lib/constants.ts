@@ -132,6 +132,15 @@ export const FEATURES: Feature[] = [
     points: ["Çift tahsilat koruması", "İmzalı güncelleme", "Rol bazlı erişim"],
     accent: "orange",
   },
+  {
+    icon: "Receipt",
+    kicker: "Yazarkasa & e-Fatura",
+    title: "Yazarkasa ve e-Fatura entegrasyonu dahil",
+    description:
+      "Adisyon kapanınca tutar Ingenico yazarkasaya otomatik gider, fiş elle girilmez. e-Fatura ve e-Arşiv, Paraşüt ve Uyumsoft üzerinden kesilir — ek modül ücreti yok.",
+    points: ["Ingenico yazarkasa", "e-Fatura / e-Arşiv", "Paraşüt · Uyumsoft"],
+    accent: "indigo",
+  },
 ];
 
 // ─── Integrations ────────────────────────────────────────────────────────────
@@ -219,6 +228,18 @@ export const PRODUCT_DETAILS: Record<string, ProductDetail> = {
         title: "Termal Yazıcı",
         description:
           "Adisyon, mutfak, bar ve paket fişi yazdırma. ESC/POS uyumlu.",
+      },
+      {
+        icon: "Receipt",
+        title: "Yazarkasa Entegrasyonu",
+        description:
+          "Ingenico yazarkasa ile entegre; ödeme alınınca fiş otomatik basılır.",
+      },
+      {
+        icon: "FileText",
+        title: "e-Fatura / e-Arşiv",
+        description:
+          "Paraşüt ve Uyumsoft üzerinden e-Fatura ve e-Arşiv kesimi.",
       },
       {
         icon: "Layers",
@@ -496,6 +517,8 @@ export const PLANS: PricingPlan[] = [
       "YemiGO POS (masa, paket, gel-al)",
       "Masa & salon planı",
       "Çoklu ödeme yöntemleri",
+      "Ingenico yazarkasa entegrasyonu",
+      "e-Fatura / e-Arşiv (Paraşüt, Uyumsoft)",
       "Termal yazıcı & mutfak fişi",
       "Sınırsız yazıcı bağlantısı",
       "Offline çalışma",
