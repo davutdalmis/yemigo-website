@@ -66,6 +66,12 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </SmoothScrollProvider>
+        {/* Cloudflare Web Analytics — site Firebase'de, DNS gri bulut; sayım yalnız bu etiketle olur */}
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "ac677a15e538499c94aa79d8c2e4a818"}'
+        />
       </body>
     </html>
   );
