@@ -2,7 +2,7 @@ import Link from "next/link";
 import HomeHero from "@/components/home/HomeHero";
 import PosScreenMock from "@/components/home/PosScreenMock";
 import ExpressLiveMap from "@/components/products/ExpressLiveMap";
-import { INTEGRATIONS, PLANS } from "@/lib/constants";
+import { INTEGRATIONS, PLANS, PROOF, WHATSAPP_URL } from "@/lib/constants";
 import { getOrganizationSchema, getWebSiteSchema } from "@/lib/structured-data";
 import "@/components/home/home.css";
 
@@ -25,9 +25,9 @@ const CHIPS = [
 function TileActions({ more }: { more: string }) {
   return (
     <div className="yh-actions">
-      <Link className="yh-btn yh-btn-primary yh-btn-sm" href="/iletisim">
+      <a className="yh-btn yh-btn-primary yh-btn-sm" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
         Demo İste
-      </Link>
+      </a>
       <Link className="yh-btn yh-btn-glass yh-btn-sm" href={more}>
         Daha fazla
       </Link>
@@ -59,7 +59,7 @@ function ImageTile(props: {
 // Anasayfa fiyat kartı: planın öne çıkan 4 maddesi (tam liste /fiyatlandirma'da)
 const PLAN_HIGHLIGHTS: Record<string, string[]> = {
   starter: ["YemiGO POS (masa, paket, gel-al)", "Online sipariş sitesi ve QR menü", "Yazarkasa ve e-Fatura / e-Arşiv", "Offline çalışma"],
-  professional: ["Manager, Express ve Panel", "YemekSepeti, Uber Eats, Migros Yemek", "Stok ve reçete yönetimi", "Kurye yönetimi ve canlı takip"],
+  professional: ["Manager, Express ve Panel", "Yemeksepeti, Getir, Trendyol GO, Migros, Uber Eats", "Stok ve reçete yönetimi", "Kurye yönetimi ve canlı takip"],
   enterprise: ["Sınırsız şube", "Üretim / imalat merkezi", "Özel entegrasyon projeleri", "Yerinde eğitim"],
 };
 
@@ -95,6 +95,16 @@ export default function HomePage() {
 
       {/* 1. Hero: tam genişlik video */}
       <HomeHero />
+
+      {/* 1b. Kanıt şeridi: canlı sayılar (constants PROOF) */}
+      <div className="yh-proof" aria-label="YemiGO kullanım rakamları">
+        <div className="yh-wrap yh-proof-row">
+          <div className="yh-proof-item"><strong>{PROOF.firms}</strong><span>firma</span></div>
+          <div className="yh-proof-item"><strong>{PROOF.branches}</strong><span>şube canlı</span></div>
+          <div className="yh-proof-item"><strong>{PROOF.ordersPerMonth}</strong><span>sipariş / ay</span></div>
+          <div className="yh-proof-item"><strong>{PROOF.city}</strong><span>yerinde kurulum</span></div>
+        </div>
+      </div>
 
       <div className="yh-wrap">
         {/* 2. Kategori kartları */}
@@ -134,9 +144,9 @@ export default function HomePage() {
               <h2>Masadan paket servise, tek ekran.</h2>
               <p>Salon, paket platformları ve telefon siparişi aynı kasada — YemiGO POS anasayfası.</p>
               <div className="yh-actions">
-                <Link className="yh-btn yh-btn-primary yh-btn-sm" href="/iletisim">
+                <a className="yh-btn yh-btn-primary yh-btn-sm" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                   Canlı demo isteyin
-                </Link>
+                </a>
               </div>
               <PosScreenMock />
             </div>
@@ -182,12 +192,19 @@ export default function HomePage() {
             Siparişler otomatik olarak kasanıza düşer, tüm kanallar tek gün sonu raporunda birleşir.
           </p>
           <div className="yh-logos">
-            {INTEGRATIONS.map((p) => (
-              <div key={p.id} className="yh-logo-pill">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={p.logo} alt={p.name} loading="lazy" />
-              </div>
-            ))}
+            {INTEGRATIONS.map((p) =>
+              p.logo ? (
+                <div key={p.id} className={`yh-logo-pill${p.iconOnly ? " yh-logo-iconic" : ""}`}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={p.logo} alt={p.name} loading="lazy" />
+                  {p.iconOnly && <span className="yh-logo-name">{p.name}</span>}
+                </div>
+              ) : (
+                <div key={p.id} className="yh-logo-pill yh-logo-text">
+                  {p.name}
+                </div>
+              ),
+            )}
           </div>
 
           <h3 className="yh-title yh-title-sm">Yazarkasa ve e-Fatura dahil.</h3>
@@ -252,9 +269,9 @@ export default function HomePage() {
                     <li key={f}>{f}</li>
                   ))}
                 </ul>
-                <Link className={`yh-btn ${plan.highlighted ? "yh-btn-primary" : "yh-btn-ghost"}`} href="/iletisim">
+                <a className={`yh-btn ${plan.highlighted ? "yh-btn-primary" : "yh-btn-ghost"}`} href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                   {plan.cta}
-                </Link>
+                </a>
               </div>
             ))}
           </div>
@@ -273,12 +290,15 @@ export default function HomePage() {
           </h2>
           <p>Kurulumu ve eğitimi biz yapıyoruz.</p>
           <div className="yh-actions">
-            <Link className="yh-btn yh-btn-primary" href="/iletisim">
-              Ücretsiz Demo
-            </Link>
+            <a className="yh-btn yh-btn-primary" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+              WhatsApp'tan demo isteyin
+            </a>
             <a className="yh-btn yh-btn-glass" href="tel:+905320563400">
               0532 056 34 00
             </a>
+            <Link className="yh-btn yh-btn-glass" href="/iletisim">
+              Form ile yazın
+            </Link>
           </div>
         </div>
       </div>

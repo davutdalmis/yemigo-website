@@ -43,7 +43,7 @@ const CAPABILITIES = [
     icon: Plug,
     title: "Açık Entegrasyonlar",
     description:
-      "YemekSepeti, Uber Eats ve Migros Yemek tek ekranda birleşir. Tüm kanallarınızı tek yerden yönetin.",
+      "Yemeksepeti, Getir Yemek, Trendyol GO, Migros Yemek, Uber Eats ve Fuudy tek ekranda birleşir. Tüm kanallarınızı tek yerden yönetin.",
   },
 ];
 

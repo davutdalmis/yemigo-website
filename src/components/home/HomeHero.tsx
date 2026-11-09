@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 /**
  * Tam genişlik video hero. data-theme="dark" → Navbar bu alanın üstündeyken
@@ -49,9 +49,9 @@ export default function HomeHero() {
           Kasa, mutfak, kurye, paket platformları ve kendi sipariş kanalınız — gerçek zamanlı.
         </p>
         <div className="yh-actions">
-          <Link className="yh-btn yh-btn-primary" href="/iletisim">
-            Ücretsiz Demo
-          </Link>
+          <a className="yh-btn yh-btn-primary" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+            WhatsApp'tan Demo İste
+          </a>
           <a className="yh-btn yh-btn-glass" href="#urunler">
             Ürünleri Keşfet
           </a>

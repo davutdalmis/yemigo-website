@@ -139,10 +139,20 @@
 
 /* ── Platform logoları ── */
 .yh-logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 18px; margin-top: 36px; }
-.yh-logo-pill { background: var(--yh-chip); border-radius: 100px; height: 64px; padding: 0 32px; display: flex; align-items: center; justify-content: center; min-width: 180px; }
+.yh-logo-pill { background: var(--yh-chip); border-radius: 100px; height: 64px; padding: 0 26px; display: flex; align-items: center; justify-content: center; min-width: 140px; }
 .yh-logo-text { font-size: 18px; font-weight: 600; color: var(--yh-ink); letter-spacing: -.01em; }
 .yh-title-sm { font-size: clamp(24px, 2.4vw, 32px); margin-top: 72px; }
 .yh-logo-pill img { height: 30px; width: auto; max-width: 150px; object-fit: contain; }
+.yh-logo-iconic { gap: 10px; }
+.yh-logo-iconic img { height: 34px; }
+.yh-logo-name { font-size: 18px; font-weight: 600; color: var(--yh-ink); letter-spacing: -.01em; white-space: nowrap; }
+
+/* ── Kanıt şeridi (hero altı) ── */
+.yh-proof { background: var(--yh-chip); border-bottom: 1px solid rgba(0,0,0,.05); }
+.yh-proof-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 56px; padding: 22px 24px; }
+.yh-proof-item { display: flex; align-items: baseline; gap: 8px; color: var(--yh-ink-soft); font-size: 15px; }
+.yh-proof-item strong { font-size: 26px; font-weight: 600; letter-spacing: -.02em; color: var(--yh-ink); }
+@media (max-width: 640px) { .yh-proof-row { gap: 10px 28px; padding: 18px 16px; } .yh-proof-item strong { font-size: 22px; } }
 
 /* ── Neden YemiGO bandı ── */
 .yh-band { background: var(--yh-chip); margin-top: 96px; padding: 96px 0; }

@@ -6,7 +6,7 @@ import CTASection from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: "Fiyatlandırma | YemiGO",
   description:
-    "YemiGO restoran yönetim platformu fiyatları. Tek şubeden çok şubeli zincirlere şeffaf paketler — YemekSepeti, Uber Eats ve Migros Yemek entegrasyonları, kurye takibi, stok ve raporlama dahil. Eğitim ücretsiz, geçişte kurulum ücretsiz.",
+    "YemiGO restoran yönetim platformu fiyatları. Tek şubeden çok şubeli zincirlere şeffaf paketler — Yemeksepeti, Getir Yemek, Trendyol GO, Migros Yemek, Uber Eats ve Fuudy entegrasyonları, kurye takibi, stok ve raporlama dahil. Eğitim ücretsiz, geçişte kurulum ücretsiz.",
 };
 
 export default function FiyatlandirmaPage() {

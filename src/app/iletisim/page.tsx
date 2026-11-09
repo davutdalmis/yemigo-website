@@ -35,8 +35,8 @@ const CONTACT_CARDS = [
   },
   {
     icon: Clock,
-    label: "Çalışma Saatleri",
-    value: "Pazartesi - Cuma, 09:00 - 18:00",
+    label: "Destek Saatleri",
+    value: "Haftanın 7 günü, 09:00 - 23:00 (WhatsApp)",
   },
 ];
 

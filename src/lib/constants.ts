@@ -92,8 +92,8 @@ export const FEATURES: Feature[] = [
     kicker: "Platformlar",
     title: "Tüm platformlar, tek ekran, tek gün sonu",
     description:
-      "YemekSepeti, Uber Eats ve Migros Yemek siparişleri otomatik POS'a düşer. Tüm kanalların cirosu tek gün sonu raporunda birleşir.",
-    points: ["YemekSepeti", "Uber Eats", "Migros Yemek"],
+      "Yemeksepeti, Getir Yemek, Trendyol GO, Migros Yemek, Uber Eats ve Fuudy siparişleri otomatik POS'a düşer. Tüm kanalların cirosu tek gün sonu raporunda birleşir.",
+    points: ["Yemeksepeti", "Getir Yemek", "Trendyol GO", "Migros Yemek", "Uber Eats", "Fuudy"],
     accent: "orange",
   },
   {
@@ -151,16 +151,42 @@ export interface Integration {
   logo: string;
   color: string;
   description: string;
+  /** Logo yalnız kare simgeyse (wordmark değil) yanına marka adı yazılır. */
+  iconOnly?: boolean;
 }
 
+// Sırası sahadaki kullanım yoğunluğuna göre. Logosu olmayan platform (logo: "") metin olarak gösterilir.
 export const INTEGRATIONS: Integration[] = [
   {
     id: "yemeksepeti",
-    name: "YemekSepeti",
+    name: "Yemeksepeti",
     logo: "/integrations/yemeksepeti-wordmark.svg",
     color: "#FA0050",
     description:
       "Türkiye'nin en büyük yemek sipariş platformu ile tam entegrasyon.",
+  },
+  {
+    id: "getir-yemek",
+    name: "Getir Yemek",
+    logo: "/integrations/getir-yemek.svg",
+    iconOnly: true,
+    color: "#5D3EBC",
+    description: "Getir Yemek siparişleri anında kasaya düşer, durumlar platforma geri yazılır.",
+  },
+  {
+    id: "trendyol-go",
+    name: "Trendyol GO",
+    logo: "/integrations/trendyol-go.svg",
+    iconOnly: true,
+    color: "#F27A1A",
+    description: "Trendyol GO siparişleri tek ekranda, paket durumu otomatik güncellenir.",
+  },
+  {
+    id: "migros-yemek",
+    name: "Migros Yemek",
+    logo: "/integrations/migros-yemek-wordmark.svg",
+    color: "#FA8200",
+    description: "Migros Yemek siparişleriniz tek ekranda toplanır.",
   },
   {
     id: "uber-eats",
@@ -170,13 +196,32 @@ export const INTEGRATIONS: Integration[] = [
     description: "Uber Eats siparişleriniz anında POS ekranınıza düşer.",
   },
   {
-    id: "migros-yemek",
-    name: "Migros Yemek",
-    logo: "/integrations/migros-yemek-wordmark.svg",
-    color: "#FA8200",
-    description: "Migros Yemek siparişleriniz tek ekranda toplanır.",
+    id: "fuudy",
+    name: "Fuudy",
+    logo: "",
+    color: "#111111",
+    description: "Fuudy siparişleri kasaya otomatik düşer.",
   },
 ];
+
+// ─── Sosyal kanıt / iletişim sabitleri ───────────────────────────────────────
+
+/** Vergi levhasındaki ticaret unvanı. Marka adı YemiGO. */
+export const COMPANY_LEGAL_NAME =
+  "Barbekü Turizm Organizasyon Gıda İşletmeleri Sanayi ve Ticaret A.Ş.";
+
+/** WhatsApp demo hattı (uluslararası biçim, + ve boşluk yok). */
+export const WHATSAPP_NUMBER = "905320563400";
+export const WHATSAPP_URL =
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Merhaba, YemiGO için demo istiyorum.")}`;
+
+/** Canlı sayılar (Firestore, 09.11.2026). Değişince burayı güncelle. */
+export const PROOF = {
+  firms: 7,
+  branches: 16,
+  ordersPerMonth: "13.000+",
+  city: "İstanbul",
+};
 
 // ─── Product Details (per-product page data) ────────────────────────────────
 
@@ -199,7 +244,7 @@ export const PRODUCT_DETAILS: Record<string, ProductDetail> = {
     name: "YemiGO POS",
     tagline: "Restoranınızın dijital beyni.",
     heroDescription:
-      "Masadan paket servise, kasadan mutfağa — tüm sipariş akışını tek ekrandan yönetin. YemekSepeti, Uber Eats ve Migros Yemek siparişleri otomatik olarak ekranınıza düşer.",
+      "Masadan paket servise, kasadan mutfağa — tüm sipariş akışını tek ekrandan yönetin. Yemeksepeti, Getir Yemek, Trendyol GO, Migros Yemek, Uber Eats ve Fuudy siparişleri otomatik olarak ekranınıza düşer.",
     platform: "Windows · iPad (masa siparişi)",
     icon: "Monitor",
     color: "#7C3AED",
@@ -245,7 +290,7 @@ export const PRODUCT_DETAILS: Record<string, ProductDetail> = {
         icon: "Layers",
         title: "Platform Entegrasyonu",
         description:
-          "YemekSepeti, Uber Eats ve Migros Yemek siparişleri anında düşer.",
+          "Yemeksepeti, Getir Yemek, Trendyol GO, Migros Yemek, Uber Eats ve Fuudy siparişleri anında düşer.",
       },
       {
         icon: "BarChart3",
@@ -544,7 +589,7 @@ export const PLANS: PricingPlan[] = [
       "Tüm YemiGO ürünleri (Manager, Express, Panel)",
       "Mutfak ekranı (KDS)",
       "Stok & reçete yönetimi",
-      "Platform entegrasyonları (YemekSepeti, Uber Eats, Migros Yemek)",
+      "Platform entegrasyonları (Yemeksepeti, Getir Yemek, Trendyol GO, Migros Yemek, Uber Eats, Fuudy)",
       "Kurye yönetimi & canlı takip",
       "Çoklu şube karşılaştırma",
       "Gelişmiş raporlama & analiz",

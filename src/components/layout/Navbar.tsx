@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-import { NAV_LINKS } from "@/lib/constants";
+import { NAV_LINKS, WHATSAPP_URL } from "@/lib/constants";
 
 /**
  * meta.com tarzı üst menü: logo + bağlantılar solda, İletişim / Giriş Yap /
@@ -111,12 +111,14 @@ export default function Navbar() {
             >
               Giriş Yap
             </a>
-            <Link
-              href="/iletisim"
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full bg-indigo-600 px-5 py-2 text-[13px] font-medium text-white transition-colors hover:bg-indigo-700"
             >
               Ücretsiz Demo
-            </Link>
+            </a>
           </div>
 
           <button
@@ -167,12 +169,14 @@ export default function Navbar() {
               >
                 Giriş Yap
               </a>
-              <Link
-                href="/iletisim"
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-4 block w-full rounded-full bg-indigo-600 px-6 py-3 text-center text-sm font-medium text-white hover:bg-indigo-700"
               >
                 Ücretsiz Demo
-              </Link>
+              </a>
             </motion.div>
           </motion.div>
         )}
