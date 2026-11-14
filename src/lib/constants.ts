@@ -210,6 +210,9 @@ export const INTEGRATIONS: Integration[] = [
 export const COMPANY_LEGAL_NAME =
   "Barbekü Turizm Organizasyon Gıda İşletmeleri Sanayi ve Ticaret A.Ş.";
 
+/** Vergi dairesi ve numarası (vergi levhası). */
+export const COMPANY_TAX = "Erenköy V.D. 1420616673";
+
 /** WhatsApp demo hattı (uluslararası biçim, + ve boşluk yok). */
 export const WHATSAPP_NUMBER = "905320563400";
 export const WHATSAPP_URL =

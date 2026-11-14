@@ -98,8 +98,8 @@ export default function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-3 border-t border-apple-border-soft py-7 sm:flex-row">
           <p className="text-xs text-apple-text-muted">
-            &copy; {new Date().getFullYear()} {COMPANY_LEGAL_NAME} (YemiGO). Tüm
-            hakları saklıdır.
+            YemiGO, {COMPANY_LEGAL_NAME}&apos;nin markasıdır. &copy;{" "}
+            {new Date().getFullYear()} Tüm hakları saklıdır.
           </p>
           <p className="text-xs text-apple-text-muted">
             Türkiye&apos;de tasarlandı ve geliştirildi

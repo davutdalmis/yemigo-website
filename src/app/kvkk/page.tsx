@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
+import { COMPANY_LEGAL_NAME, COMPANY_TAX } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "KVKK Aydınlatma Metni | YemiGO",
@@ -94,18 +95,8 @@ const SECTIONS: Section[] = [
         type: "ul",
         items: [
           { label: "Veri Sorumlusu", text: "YemiGO" },
-          {
-            label: "Ticari Unvan",
-            text: "[Şirketinizin tam ticari unvanı buraya eklenecektir]",
-          },
-          {
-            label: "Adres",
-            text: "[Şirketinizin açık adresi buraya eklenecektir]",
-          },
-          {
-            label: "MERSİS / Vergi No",
-            text: "[Şirketinizin MERSİS veya vergi numarası buraya eklenecektir]",
-          },
+          { label: "Ticari Unvan", text: COMPANY_LEGAL_NAME },
+          { label: "Vergi Dairesi / No", text: COMPANY_TAX },
           { label: "E-posta", text: "info@yemigo.com" },
           { label: "İnternet Sitesi", text: "yemigo.com" },
         ],
